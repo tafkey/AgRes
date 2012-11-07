@@ -8,6 +8,9 @@
 
     <StatementTemplate ID="title" minOccurs="1" type="literal">
       <Property>http://purl.org/dc/terms/title</Property>      
+      <LiteralConstraint>
+        <LanguageOccurrence>mandatory</LanguageOccurrence>
+      </LiteralConstraint> 
     </StatementTemplate>
 
     <StatementTemplate ID="alternative" minOccurs="0" type="literal">
