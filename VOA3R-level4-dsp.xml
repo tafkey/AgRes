@@ -4,7 +4,7 @@
   <DescriptionTemplate ID="AgResResource" minOccurs="1" maxOccurs="1" standalone="yes">
 
 	<!-- +++ new -->
-    <ResourceClass>http://example.org/class/Resource</ResourceClass>
+    <ResourceClass>http://voa3r.eu/class/Resource</ResourceClass>
 
     <StatementTemplate ID="title" minOccurs="1" type="literal">
       <Property>http://purl.org/dc/terms/title</Property>      
@@ -242,7 +242,7 @@
 
   <DescriptionTemplate ID="metametadata" standalone="no">
 	<!-- +++ new -->
-    <ResourceClass>http://example.org/class/MetaMetadata</ResourceClass>
+    <ResourceClass>http://voa3r.eu/class/MetaMetadata</ResourceClass>
 
     <StatementTemplate ID="identifier" minOccurs="0" type="nonliteral">
       <Property>http://purl.org/dc/terms/identifier</Property>      
@@ -272,7 +272,7 @@
 
   <DescriptionTemplate ID="research" standalone="no">
  	<!-- +++ new -->
-   <ResourceClass>http://example.org/class/Research</ResourceClass>
+   <ResourceClass>http://voa3r.eu/class/Research</ResourceClass>
 
     <StatementTemplate ID="objectOfInterest" minOccurs="0" type="nonliteral">
       <Property>http://voa3r.eu/terms/objectOfInterest</Property>      

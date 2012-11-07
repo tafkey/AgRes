@@ -4,17 +4,17 @@
   <iso:ns prefix="dcds" uri="http://purl.org/dc/xmlns/2008/09/01/dc-ds-xml/"/>
   <iso:pattern id="ds">
     <iso:rule context="dcds:descriptionSet">
-      <iso:report test="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]])">Report: Description Set Element contains <iso:value-of select="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]])"/> Description Elements matching description template dt-1-AgResResource</iso:report>
-      <iso:assert test="count(dcds:description[dcds:statement]) &gt;= 1">Error: Minimum number of Description Elements matching description template dt-1-AgResResource not present. Present: <iso:value-of select="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]])"/> Minimum required: 1</iso:assert>
-      <iso:assert test="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]) &lt;= 1">Error: Maximum number of Description Elements matching description template dt-1-AgResResource exceeded. Present: <iso:value-of select="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]])"/> Maximum permitted: 1</iso:assert>
+      <iso:report test="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]])">Report: Description Set Element contains <iso:value-of select="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]])"/> Description Elements matching description template dt-1-AgResResource</iso:report>
+      <iso:assert test="count(dcds:description[dcds:statement]) &gt;= 1">Error: Minimum number of Description Elements matching description template dt-1-AgResResource not present. Present: <iso:value-of select="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]])"/> Minimum required: 1</iso:assert>
+      <iso:assert test="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]) &lt;= 1">Error: Maximum number of Description Elements matching description template dt-1-AgResResource exceeded. Present: <iso:value-of select="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]])"/> Maximum permitted: 1</iso:assert>
       <iso:report test="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]])">Report: Description Set Element contains <iso:value-of select="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]])"/> Description Elements matching description template dt-2-agent</iso:report>
-      <iso:report test="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/MetaMetadata')]])">Report: Description Set Element contains <iso:value-of select="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/MetaMetadata')]])"/> Description Elements matching description template dt-3-metametadata</iso:report>
-      <iso:report test="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Research')]])">Report: Description Set Element contains <iso:value-of select="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Research')]])"/> Description Elements matching description template dt-4-research</iso:report>
-      <iso:report test="count(dcds:description[not(dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and ((@dcds:valueURI='http://example.org/class/Resource') or (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent') or (@dcds:valueURI='http://example.org/class/MetaMetadata') or (@dcds:valueURI='http://example.org/class/Research'))])])">Error: Description Set Element contains <iso:value-of select="count(dcds:description[not(dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and ((@dcds:valueURI='http://example.org/class/Resource') or (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent') or (@dcds:valueURI='http://example.org/class/MetaMetadata') or (@dcds:valueURI='http://example.org/class/Research'))])])"/> Description Elements with no matching description template </iso:report>
+      <iso:report test="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]])">Report: Description Set Element contains <iso:value-of select="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]])"/> Description Elements matching description template dt-3-metametadata</iso:report>
+      <iso:report test="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]])">Report: Description Set Element contains <iso:value-of select="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]])"/> Description Elements matching description template dt-4-research</iso:report>
+      <iso:report test="count(dcds:description[not(dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and ((@dcds:valueURI='http://voa3r.eu/class/Resource') or (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent') or (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata') or (@dcds:valueURI='http://voa3r.eu/class/Research'))])])">Error: Description Set Element contains <iso:value-of select="count(dcds:description[not(dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and ((@dcds:valueURI='http://voa3r.eu/class/Resource') or (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent') or (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata') or (@dcds:valueURI='http://voa3r.eu/class/Research'))])])"/> Description Elements with no matching description template </iso:report>
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-AgResResource">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]">
       <iso:let name="resourceURI" value="@dcds:resourceURI"/>
       <iso:let name="resourceId" value="@dcds:resourceId"/>
       <iso:report test="/dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueURI = $resourceURI] or /dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueRef = $resourceId]">Error: Description Element: <iso:value-of select="1 + count(preceding-sibling::dcds:description)"/> Resource is referred to as value, but description template specifies standalone="yes"</iso:report>
@@ -66,18 +66,18 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-1-title-lit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/title']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/title']">
       <iso:assert test="dcds:literalValueString">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-1-title-</iso:assert>
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-2-alternative-lit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/alternative']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/alternative']">
       <iso:assert test="dcds:literalValueString">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-2-alternative-</iso:assert>
       <iso:assert test="dcds:literalValueString/@xml:lang">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Language for Literal required by statement template dt-1-stp-2-alternative-</iso:assert>
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-3-creator-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/creator']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/creator']">
       <iso:assert test="@dcds:valueURI or @dcds:valueRef">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef specified, so either a valueURI attribute or a valueRef attribute must be present.dt-1-stp-3-creator-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:let name="valueRef" value="@dcds:valueRef"/>
@@ -95,7 +95,7 @@
   <iso:report test="count(dcds:valueString)">Report: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Statement Element contains <iso:value-of select="count(dcds:valueString)"/> Value String Elements</iso:report>
   <iso:assert test="count(dcds:valueString) &lt;= 0">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template  exceeded. Present: <iso:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</iso:assert>
   <iso:pattern id="dt-1-stp-5-publisher-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/publisher']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/publisher']">
       <iso:assert test="@dcds:valueURI or @dcds:valueRef">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef specified, so either a valueURI attribute or a valueRef attribute must be present.dt-1-stp-5-publisher-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:let name="valueRef" value="@dcds:valueRef"/>
@@ -106,13 +106,13 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-6-date-lit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date']">
       <iso:assert test="dcds:literalValueString">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-6-date-</iso:assert>
       <iso:assert test="(dcds:literalValueString/@dcds:sesURI = 'http://purl.org/dc/terms/W3CDTF')">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> SES URI must be from list specified by statement template dt-1-stp-6-date-</iso:assert>
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-7-language-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/language']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/language']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-7-language-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-7-language-</iso:report>
@@ -122,7 +122,7 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-8-identifier-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-8-identifier-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-8-identifier-</iso:report>
@@ -132,7 +132,7 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-9-format-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/format']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/format']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-9-format-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-9-format-</iso:report>
@@ -142,7 +142,7 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-10-isShownBy-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownBy']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownBy']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-10-isShownBy-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-10-isShownBy-</iso:report>
@@ -152,7 +152,7 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-11-isShownAt-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownAt']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownAt']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-11-isShownAt-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-11-isShownAt-</iso:report>
@@ -162,7 +162,7 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-12-subject-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/subject']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/subject']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-12-subject-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-12-subject-</iso:report>
@@ -172,17 +172,17 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-13-description-lit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/description']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/description']">
       <iso:assert test="dcds:literalValueString">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-13-description-</iso:assert>
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-14-abstract-lit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/abstract']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/abstract']">
       <iso:assert test="dcds:literalValueString">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-14-abstract-</iso:assert>
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-15-bibliographicCitation-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/bibliographicCitation']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/bibliographicCitation']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-15-bibliographicCitation-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-15-bibliographicCitation-</iso:report>
@@ -194,7 +194,7 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-16-type-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-16-type-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-16-type-</iso:report>
@@ -204,24 +204,24 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-17-rights-lit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/rights']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/rights']">
       <iso:assert test="dcds:literalValueString">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-17-rights-</iso:assert>
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-18-accessRights-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/accessRights']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/accessRights']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-18-accessRights-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-18-accessRights-</iso:report>
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-19-license-lit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/license']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/license']">
       <iso:assert test="dcds:literalValueString">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-19-license-</iso:assert>
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-20-reviewStatus-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/reviewStatus']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/reviewStatus']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-20-reviewStatus-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-20-reviewStatus-</iso:report>
@@ -231,7 +231,7 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-21-publicationStatus-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/publicationStatus']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/publicationStatus']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-21-publicationStatus-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-21-publicationStatus-</iso:report>
@@ -241,52 +241,52 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-22-relation-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/relation']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/relation']"/>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-23-conformsTo-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/conformsTo']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/conformsTo']"/>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-24-references-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/references']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/references']"/>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-25-isReferencedBy-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isReferencedBy']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isReferencedBy']"/>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-26-hasPart-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasPart']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasPart']"/>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-27-isPartOf-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isPartOf']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isPartOf']"/>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-28-hasVersion-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasVersion']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasVersion']"/>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-29-isVersionOf-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isVersionOf']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isVersionOf']"/>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-30-hasTranslation-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasTranslation']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasTranslation']"/>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-31-isTranslationOf-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/isTranslationOf']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/isTranslationOf']"/>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-32-hasMetametadata-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasMetametadata']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasMetametadata']">
       <iso:assert test="@dcds:valueURI or @dcds:valueRef">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef specified, so either a valueURI attribute or a valueRef attribute must be present.dt-1-stp-32-hasMetametadata-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:let name="valueRef" value="@dcds:valueRef"/>
-      <iso:report test="(@dcds:valueURI and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/MetaMetadata')]][@dcds:resourceURI = $valueURI])) or (@dcds:valueRef and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/MetaMetadata')]][@dcds:resourceId = $valueRef]))">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef specified, so either the valueRef attribute value must match a resourceId attribute value, or the valueURI attribute value must match a resourceURI attribute value, on a Description Element matching the specified description template.dt-1-stp-32-hasMetametadata-</iso:report>
+      <iso:report test="(@dcds:valueURI and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]][@dcds:resourceURI = $valueURI])) or (@dcds:valueRef and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]][@dcds:resourceId = $valueRef]))">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef specified, so either the valueRef attribute value must match a resourceId attribute value, or the valueURI attribute value must match a resourceURI attribute value, on a Description Element matching the specified description template.dt-1-stp-32-hasMetametadata-</iso:report>
       <iso:report test="@dcds:vesURI">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> VES URI disallowed by statement template dt-1-stp-32-hasMetametadata-</iso:report>
       <iso:report test="count(dcds:valueString)">Report: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Statement Element contains <iso:value-of select="count(dcds:valueString)"/> Value String Elements</iso:report>
       <iso:assert test="count(dcds:valueString) &lt;= 0">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-32-hasMetametadata- exceeded. Present: <iso:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</iso:assert>
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-33-hasResearch-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasResearch']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasResearch']">
       <iso:assert test="@dcds:valueURI or @dcds:valueRef">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef specified, so either a valueURI attribute or a valueRef attribute must be present.dt-1-stp-33-hasResearch-</iso:assert>
       <iso:let name="valueURI" value="@dcds:valueURI"/>
       <iso:let name="valueRef" value="@dcds:valueRef"/>
-      <iso:report test="(@dcds:valueURI and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Research')]][@dcds:resourceURI = $valueURI])) or (@dcds:valueRef and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Research')]][@dcds:resourceId = $valueRef]))">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef specified, so either the valueRef attribute value must match a resourceId attribute value, or the valueURI attribute value must match a resourceURI attribute value, on a Description Element matching the specified description template.dt-1-stp-33-hasResearch-</iso:report>
+      <iso:report test="(@dcds:valueURI and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]][@dcds:resourceURI = $valueURI])) or (@dcds:valueRef and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]][@dcds:resourceId = $valueRef]))">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef specified, so either the valueRef attribute value must match a resourceId attribute value, or the valueURI attribute value must match a resourceURI attribute value, on a Description Element matching the specified description template.dt-1-stp-33-hasResearch-</iso:report>
       <iso:report test="@dcds:vesURI">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> VES URI disallowed by statement template dt-1-stp-33-hasResearch-</iso:report>
       <iso:report test="count(dcds:valueString)">Report: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Statement Element contains <iso:value-of select="count(dcds:valueString)"/> Value String Elements</iso:report>
       <iso:assert test="count(dcds:valueString) &lt;= 0">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-33-hasResearch- exceeded. Present: <iso:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</iso:assert>
@@ -328,7 +328,7 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-3-metametadata">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/MetaMetadata')]]">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]">
       <iso:let name="resourceURI" value="@dcds:resourceURI"/>
       <iso:let name="resourceId" value="@dcds:resourceId"/>
       <iso:assert test="/dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueURI = $resourceURI] or /dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueRef = $resourceId]">Error: Description Element: <iso:value-of select="1 + count(preceding-sibling::dcds:description)"/> Resource not referred to as value, but description template specifies standalone="no"</iso:assert>
@@ -343,13 +343,13 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-3-stp-1-identifier-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier']"/>
   </iso:pattern>
   <iso:pattern id="dt-3-stp-2-type-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']"/>
   </iso:pattern>
   <iso:pattern id="dt-3-stp-3-date-lit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date']">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date']">
       <iso:assert test="dcds:literalValueString">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-3-stp-3-date-</iso:assert>
       <iso:assert test="(dcds:literalValueString/@dcds:sesURI = 'http://purl.org/dc/terms/W3CDTF')">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> SES URI must be from list specified by statement template dt-3-stp-3-date-</iso:assert>
     </iso:rule>
@@ -362,7 +362,7 @@
   <iso:report test="count(dcds:valueString)">Report: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Statement Element contains <iso:value-of select="count(dcds:valueString)"/> Value String Elements</iso:report>
   <iso:assert test="count(dcds:valueString) &lt;= 0">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template  exceeded. Present: <iso:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</iso:assert>
   <iso:pattern id="dt-4-research">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Research')]]">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]">
       <iso:let name="resourceURI" value="@dcds:resourceURI"/>
       <iso:let name="resourceId" value="@dcds:resourceId"/>
       <iso:assert test="/dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueURI = $resourceURI] or /dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueRef = $resourceId]">Error: Description Element: <iso:value-of select="1 + count(preceding-sibling::dcds:description)"/> Resource not referred to as value, but description template specifies standalone="no"</iso:assert>
@@ -376,21 +376,21 @@
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-4-stp-1-objectOfInterest-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/objectOfInterest']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/objectOfInterest']"/>
   </iso:pattern>
   <iso:pattern id="dt-4-stp-2-measuresVariable-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/measuresVariable']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/measuresVariable']"/>
   </iso:pattern>
   <iso:pattern id="dt-4-stp-3-usesMethod-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesMethod']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesMethod']"/>
   </iso:pattern>
   <iso:pattern id="dt-4-stp-4-usesProtocol-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesProtocol']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesProtocol']"/>
   </iso:pattern>
   <iso:pattern id="dt-4-stp-5-usesInstrument-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesInstrument']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesInstrument']"/>
   </iso:pattern>
   <iso:pattern id="dt-4-stp-6-usesTechnique-nonlit">
-    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://example.org/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesTechnique']"/>
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesTechnique']"/>
   </iso:pattern>
 </iso:schema>

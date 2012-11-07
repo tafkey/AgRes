@@ -5,7 +5,7 @@
   <!-- Resource example -->
 
   <dcds:description dcds:resourceURI="http://voa3r.eu/documents/553/">
-    <dcds:statement dcds:propertyURI="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" dcds:valueURI="http://example.org/class/Resource"/>
+    <dcds:statement dcds:propertyURI="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" dcds:valueURI="http://voa3r.eu/class/Resource"/>
 
     <!-- Title information -->
 
@@ -184,7 +184,7 @@
   <!--Meta-metadata example  -->
 
   <dcds:description dcds:resourceId="metametadata">
-    <dcds:statement dcds:propertyURI="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" dcds:valueURI="http://example.org/class/MetaMetadata" />
+    <dcds:statement dcds:propertyURI="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" dcds:valueURI="http://voa3r.eu/class/MetaMetadata" />
 
 
     <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/types">
