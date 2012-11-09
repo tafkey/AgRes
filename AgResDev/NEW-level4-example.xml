@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Description Set Element -->
+<dcds:descriptionSet xmlns:dcds="http://purl.org/dc/xmlns/2008/09/01/dc-ds-xml/">
+
+  <!-- Resource example -->
+
+  <dcds:description dcds:resourceId="resource" dcds:resourceURI="http://voa3r.eu/documents/553/res">
+    <dcds:statement dcds:propertyURI="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" dcds:valueURI="http://voa3r.eu/class/Resource"/>
+
+    <!-- Title information -->
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/title">
+      <dcds:literalValueString xml:lang='en'>Organic Vegetables</dcds:literalValueString>
+    </dcds:statement>
+    
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/title">
+      <dcds:literalValueString xml:lang='el'>Βιολογικά Λαχανικά</dcds:literalValueString>
+    </dcds:statement>
+    
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/alternative">
+      <dcds:literalValueString xml:lang='en'>Organic Food</dcds:literalValueString>
+    </dcds:statement>
+
+    <!-- end of title information -->
+
+    <!-- Responsible body -->
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/creator" dcds:valueRef="person1" />
+
+<!--    <dcds:statement dcds:propertyURI="http://id.loc.gov/vocabulary/relators/edt" dcds:valueURI="http://voa3r.eu/people/12/foaf" /> -->
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/publisher" dcds:valueRef="company1" />
+
+    <!-- end of responsible body -->
+
+    <!-- Physical characteristics -->
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/date">
+		<!-- which is correct, DSP asks for W3CDTF ???? -->
+<!--
+      <dcds:literalValueString dcds:sesURI="http://www.w3.org/2001/XMLSchema#date">2001-07-18</dcds:literalValueString>
+-->
+      <dcds:literalValueString dcds:sesURI="http://purl.org/dc/terms/W3CDTF">2001-07-18</dcds:literalValueString>
+    </dcds:statement>
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/language" dcds:vesURI="http://purl.org/dc/terms/RFC5646" dcds:valueURI="http://purl.org/dc/terms/RFC5646">
+      <dcds:valueString>en</dcds:valueString>
+    </dcds:statement>
+
+	<!-- element 9 -->
+<!--
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/identifier" dcds:valueURI="http://voa3r.eu/documents/553/" />
+-->
+    <dcds:statement dcds:sesURI="http://voa3r.eu/terms/EncodedSchema" dcds:propertyURI="http://purl.org/dc/terms/identifier" dcds:ValueURI="http://voa3r.eu/documents/553" />
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/identifier">
+<!--
+      <dcds:literalValueString dcds:sesURI='http://voa3r.eu/terms/EncodedSchema'>ISBN:91-576-6485-4</dcds:literalValueString>
+-->
+      <dcds:ValueString dcds:sesURI='http://voa3r.eu/terms/EncodedSchema'>ISBN:91-576-6485-4</dcds:ValueString>
+    </dcds:statement>
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/format" dcds:vesURI="http://purl.org/dc/terms/IMT">
+      <dcds:valueString>text/http</dcds:valueString>
+    </dcds:statement>
+
+    <!-- end of physical characteristics -->
+
+    <!-- Location -->
+
+    <dcds:statement dcds:propertyURI="http://www.europeana.eu/schemas/ese/isShownBy" dcds:valueURI="http://voa3r.eu/documents/553/1/info.pdf"/>
+
+    <dcds:statement dcds:propertyURI="http://www.europeana.eu/schemas/ese/isShownAt" dcds:valueURI="http://voa3r.eu/documents/553/" />
+
+    <!-- end of location -->
+
+    <!-- Subject -->
+
+	<!-- element 14 -->
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/subject" dcds:valueURI="http://aims.fao.org/aos/agrovoc/c_6599" />
+
+	<!-- element 15 -->
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/subject">
+      <dcds:ValueString dcds:sesURI="http://voa3r.eu/terms/EncodedSchema">Organic</dcds:ValueString>
+    </dcds:statement>
+
+    <!-- end of subject -->
+
+    <!-- Description -->
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/description">
+      <dcds:literalValueString xml:lang="en">Contains a series of articles which are intended to…</dcds:literalValueString>
+    </dcds:statement>
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/abstract">
+      <dcds:literalValueString xml:lang="en">One of the least understood aspects of population biology is…</dcds:literalValueString>
+    </dcds:statement>
+
+<!--
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/bibliographicCitation" dcds:sesURI="http://voa3r.eu/terms/EncodedSchema">
+      <dcds:ValueString>BibTEX:@article{John92, author = "John Brown", title = "Organic Vegetables", journal = "Organic. Monthly", volume = "99", year = "1992", pages = "403-422"}
+      </dcds:ValueString>
+    </dcds:statement>
+-->
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/bibliographicCitation" dcds:vesURI="http://www.openurl.info/registry/" >
+      <dcds:literalValueString 
+         dcds:sesURI="http://voa3r.eu/terms/EncodedSchema">BibTEX:@article{John92, author = "John Brown", title = "Organic Vegetables", journal = "Organic. Monthly", volume = "99", year = "1992", pages = "403-422"}
+      </dcds:literalValueString>
+    </dcds:statement>
+
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/type" dcds:vesURI="http://voa3r.eu/terms/ResourceType">
+      <dcds:valueString>Article</dcds:valueString>
+    </dcds:statement>
+
+    <!-- end of description -->
+
+    <!-- Rights -->
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/rights">
+      <dcds:literalValueString xml:lang="en">All rights reserved...</dcds:literalValueString>
+    </dcds:statement>
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/accessRights" 
+      dcds:vesURI="http://purl.org/eprint/accessRights" 
+      dcds:valueURI="http://purl.org/eprint/accessRights/OpenAccess" />
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/license" dcds:valueURI="http://creativecommons.org/licenses/by-sa/2.0/uk/" />
+
+    <!-- end of rights -->
+
+    <!-- Status -->
+
+    <dcds:statement dcds:propertyURI="http://voa3r.eu/terms/reviewStatus" dcds:vesURI="http://voa3r.eu/terms/ReviewStatus">
+      <dcds:valueString>Peer Reviewed</dcds:valueString>
+    </dcds:statement>
+
+    <dcds:statement dcds:propertyURI="http://voa3r.eu/terms/publicationStatus" dcds:vesURI="http://voa3r.eu/terms/PublicationStatus">
+      <dcds:valueString>Published</dcds:valueString>
+    </dcds:statement>
+
+    <!-- end of status -->
+
+    <!-- Relation -->
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/conformsTo" dcds:valueURI="http://voa3r.eu/Instructions.pdf" />
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/references" dcds:valueURI="http://pub.epsilon.slu.se/2274/" />
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/isReferencedBy" dcds:valueURI="http://pub.epsilon.slu.se/2279/" />
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/hasPart" dcds:valueURI="http://voa3r.eu/resource/45" />
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/isPartOf" dcds:valueURI="http://voa3r.eu/resource/46" />
+    
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/hasVersion" dcds:valueURI="http://pub.epsilon.slu.se/2274/" />
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/isVersionOf" dcds:valueURI="http://voa3r.eu/documents/553/0.2/" />
+
+    <dcds:statement dcds:propertyURI="http://voa3r.eu/terms/hasMetametadata" dcds:valueRef="metametadata" />
+
+    <dcds:statement dcds:propertyURI="http://voa3r.eu/terms/hasResearch" dcds:valueRef="research" />
+
+    <!-- end of relation -->
+
+  </dcds:description>
+
+  <!-- end of resource example -->
+
+  <!-- Person example -->
+
+  <dcds:description dcds:resourceId="person1">
+
+    <dcds:statement dcds:propertyURI="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" dcds:valueURI="http://xmlns.com/foaf/0.1/Agent"/>
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/type" dcds:valueURI="http://xmlns.com/foaf/0.1/Person" />
+
+
+    <dcds:statement dcds:propertyURI="http://xmlns.com/foaf/0.1/firstName">
+      <dcds:literalValueString>John</dcds:literalValueString>
+    </dcds:statement>
+
+    <dcds:statement dcds:propertyURI="http://xmlns.com/foaf/0.1/lastName">
+      <dcds:literalValueString>Brown</dcds:literalValueString>
+    </dcds:statement>
+	<!-- dt-2-st-4-mbox -->
+    <dcds:statement dcds:propertyURI="http://xmlns.com/foaf/0.1/mbox" dcds:valueURI="mailto:brown@example.com" />
+
+  </dcds:description>
+
+  <!-- end of person example -->
+
+  <!-- Company example -->
+
+  <dcds:description dcds:resourceId="company1">
+
+    <dcds:statement dcds:propertyURI="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" dcds:valueURI="http://xmlns.com/foaf/0.1/Agent"/>
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/type" dcds:valueURI="http://xmlns.com/foaf/0.1/Organization" />
+
+    <dcds:statement dcds:propertyURI="http://xmlns.com/foaf/0.1/name">
+      <dcds:literalValueString>Springer</dcds:literalValueString>
+    </dcds:statement>
+
+    <dcds:statement dcds:propertyURI="http://xmlns.com/foaf/0.1/mbox" dcds:valueURI="mailto:info@springer.com" />
+
+  </dcds:description>
+
+  <!-- end of company example  -->
+
+  <!--Meta-metadata example  -->
+
+  <dcds:description dcds:resourceId="metametadata">
+    <dcds:statement dcds:propertyURI="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" dcds:valueURI="http://voa3r.eu/class/MetaMetadata" />
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/type">
+      <dcds:literalValueString>VOA3R AP</dcds:literalValueString>
+    </dcds:statement>
+
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/date">
+		<!-- which is correct, DSP asks for W3CDTF ???? -->
+<!--
+      <dcds:literalValueString dcds:sesURI="http://www.w3.org/2001/XMLSchema#date">2001-07-18</dcds:literalValueString>
+-->
+      <dcds:literalValueString dcds:sesURI="http://purl.org/dc/terms/W3CDTF">2001-07-18</dcds:literalValueString>
+    </dcds:statement>
+
+<!--
+	not allowed since we have a descriptionTemplateRef in the DSP...
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/contributor" dcds:valueURI="http://voa3r.eu/people/29/foaf" />
+-->
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/contributor" dcds:valueRef="person1" />
+
+  </dcds:description>
+
+  <!--end of meta-metadata example  -->
+
+  <!--Research example  -->
+
+  <dcds:description dcds:resourceId="research">
+    <dcds:statement dcds:propertyURI="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" dcds:valueURI="http://voa3r.eu/class/Research" />
+                     
+    <dcds:statement dcds:propertyURI="http://voa3r.eu/terms/objectOfInterest" dcds:valueURI="http://aims.fao.org/aos/agrovoc/c_8277" />
+
+    <dcds:statement dcds:propertyURI="http://voa3r.eu/terms/measuresVariable" dcds:valueURI="http://aims.fao.org/aos/agrovoc/c_1678" />
+
+    <dcds:statement dcds:propertyURI="http://voa3r.eu/terms/usesMethod">
+      <dcds:literalValueString xml:lang="en">DNA Extraction</dcds:literalValueString>
+    </dcds:statement>
+
+    <dcds:statement dcds:propertyURI="http://voa3r.eu/terms/usesProtocol">
+      <dcds:literalValueString xml:lang="en">SSR Analysis: Thomas and Scott (1993)</dcds:literalValueString>
+    </dcds:statement>
+
+    <dcds:statement dcds:propertyURI="http://voa3r.eu/terms/usesInstrument">
+      <dcds:literalValueString xml:lang="en">Wind Tunnel</dcds:literalValueString>
+    </dcds:statement>
+
+    <dcds:statement dcds:propertyURI="http://voa3r.eu/terms/usesTechnique">
+      <dcds:literalValueString xml:lang="en">Data Analysis</dcds:literalValueString>
+    </dcds:statement>
+
+  </dcds:description>
+
+  <!--end of research example  -->
+
+</dcds:descriptionSet>

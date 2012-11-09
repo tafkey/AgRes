@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<result xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:loc="http://www.thaiopensource.com/ns/location" xmlns:err="http://www.thaiopensource.com/ns/error" xmlns:xsltc="http://www.thaiopensource.com/ns/xsltc" xmlns:osaxon="http://icl.com/saxon" xmlns:nsaxon="http://saxon.sf.net/" xmlns:xalan-node-info="http://xml.apache.org/xalan/java/org.apache.xalan.lib.NodeInfo" xmlns:dcds="http://purl.org/dc/xmlns/2008/09/01/dc-ds-xml/">
+  <report test="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]])">
+    <statement>Report: Description Set Element contains 1 Description Elements matching description template dt-1-AgResResource</statement>
+  </report>
+  <report test="count(dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]])">
+    <statement>Report: Description Set Element contains 1 Description Elements matching description template dt-3-metametadata</statement>
+  </report>
+  <report test="count(dcds:description[not(dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and ((@dcds:valueURI='http://voa3r.eu/class/Resource') or (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent') or (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata') or (@dcds:valueURI='http://voa3r.eu/class/Research'))])])">
+    <statement>Error: Description Set Element contains 3 Description Elements with no matching description template</statement>
+  </report>
+  <report test="/dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueURI = $resourceURI] or /dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueRef = $resourceId]">
+    <statement>Error: Description Element: 1 Resource is referred to as value, but description template specifies standalone="yes"</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/title'])">
+    <statement>Report: Description Element: 1 Description Element contains 2 Statement Elements matching statement template dt-1-st-1-title-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/alternative'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-2-alternative-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/creator'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-3-creator-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/publisher'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-4-publisher-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-5-date-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/language'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-6-language-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier'])">
+    <statement>Report: Description Element: 1 Description Element contains 2 Statement Elements matching statement template dt-1-st-7-identifier-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/format'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-8-format-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownBy'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-9-isShownBy-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownAt'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-10-isShownAt-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/subject'])">
+    <statement>Report: Description Element: 1 Description Element contains 2 Statement Elements matching statement template dt-1-st-11-subject-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/description'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-12-description-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/abstract'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-13-abstract-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/bibliographicCitation'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-14-bibliographicCitation-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-15-type-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/rights'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-16-rights-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/accessRights'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-17-accessRights-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/license'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-18-license-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/reviewStatus'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-19-reviewStatus-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/publicationStatus'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-20-publicationStatus-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/conformsTo'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-22-conformsTo-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/references'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-23-references-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isReferencedBy'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-24-isReferencedBy-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasPart'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-25-hasPart-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isPartOf'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-26-isPartOf-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasVersion'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-27-hasVersion-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isVersionOf'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-28-isVersionOf-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasMetametadata'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-31-hasMetametadata-</statement>
+  </report>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasResearch'])">
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-32-hasResearch-</statement>
+  </report>
+  <report test="count(dcds:statement[not((@dcds:propertyURI='http://purl.org/dc/terms/title') or (@dcds:propertyURI='http://purl.org/dc/terms/alternative') or (@dcds:propertyURI='http://purl.org/dc/terms/creator') or (@dcds:propertyURI='http://purl.org/dc/terms/publisher') or (@dcds:propertyURI='http://purl.org/dc/terms/date') or (@dcds:propertyURI='http://purl.org/dc/terms/language') or (@dcds:propertyURI='http://purl.org/dc/terms/identifier') or (@dcds:propertyURI='http://purl.org/dc/terms/format') or (@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownBy') or (@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownAt') or (@dcds:propertyURI='http://purl.org/dc/terms/subject') or (@dcds:propertyURI='http://purl.org/dc/terms/description') or (@dcds:propertyURI='http://purl.org/dc/terms/abstract') or (@dcds:propertyURI='http://purl.org/dc/terms/bibliographicCitation') or (@dcds:propertyURI='http://purl.org/dc/terms/type') or (@dcds:propertyURI='http://purl.org/dc/terms/rights') or (@dcds:propertyURI='http://purl.org/dc/terms/accessRights') or (@dcds:propertyURI='http://purl.org/dc/terms/license') or (@dcds:propertyURI='http://voa3r.eu/terms/reviewStatus') or (@dcds:propertyURI='http://voa3r.eu/terms/publicationStatus') or (@dcds:propertyURI='http://purl.org/dc/terms/relation') or (@dcds:propertyURI='http://purl.org/dc/terms/conformsTo') or (@dcds:propertyURI='http://purl.org/dc/terms/references') or (@dcds:propertyURI='http://purl.org/dc/terms/isReferencedBy') or (@dcds:propertyURI='http://purl.org/dc/terms/hasPart') or (@dcds:propertyURI='http://purl.org/dc/terms/isPartOf') or (@dcds:propertyURI='http://purl.org/dc/terms/hasVersion') or (@dcds:propertyURI='http://purl.org/dc/terms/isVersionOf') or (@dcds:propertyURI='http://voa3r.eu/terms/hasTranslation') or (@dcds:propertyURI='http://voa3r.eu/terms/isTranslationOf') or (@dcds:propertyURI='http://voa3r.eu/terms/hasMetametadata') or (@dcds:propertyURI='http://voa3r.eu/terms/hasResearch'))])">
+    <statement>Error: Description Element: 1 Description Element contains 2 Statement Elements with no matching statement template</statement>
+  </report>
+  <report test="(@dcds:valueURI and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]][@dcds:resourceURI = $valueURI])) or (@dcds:valueRef and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]][@dcds:resourceId = $valueRef]))">
+    <statement>Error: Description Element: 1 Statement Element: 5 DescriptionTemplateRef specified, so either the valueRef attribute value must match a resourceId attribute value, or the valueURI attribute value must match a resourceURI attribute value, on a Description Element matching the specified description template.dt-1-stp-3-creator-</statement>
+  </report>
+  <report test="(@dcds:valueURI and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]][@dcds:resourceURI = $valueURI])) or (@dcds:valueRef and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]][@dcds:resourceId = $valueRef]))">
+    <statement>Error: Description Element: 1 Statement Element: 7 DescriptionTemplateRef specified, so either the valueRef attribute value must match a resourceId attribute value, or the valueURI attribute value must match a resourceURI attribute value, on a Description Element matching the specified description template.dt-1-stp-5-publisher-</statement>
+  </report>
+  <failed-assertion test="(dcds:literalValueString/@dcds:sesURI = 'http://purl.org/dc/terms/W3CDTF')">
+    <statement>Error: Description Element: 1 Statement Element: 8 SES URI must be from list specified by statement template dt-1-stp-6-date-</statement>
+  </failed-assertion>
+  <report test="count(dcds:valueString)">
+    <statement>Report: Description Element: 1 Statement Element: 9 Statement Element contains 1 Value String Elements</statement>
+  </report>
+  <report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">
+    <statement>Error: Description Element: 1 Statement Element: 10 DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-8-identifier-</statement>
+  </report>
+  <failed-assertion test="(dcds:ValueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema')">
+    <statement>Error: Description Element: 1 Statement Element: 10 SES URI must be from list specified by statement template dt-1-stp-8-identifier-</statement>
+  </failed-assertion>
+  <failed-assertion test="(dcds:ValueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema')">
+    <statement>Error: Description Element: 1 Statement Element: 11 SES URI must be from list specified by statement template dt-1-stp-8-identifier-</statement>
+  </failed-assertion>
+  <report test="count(dcds:valueString)">
+    <statement>Report: Description Element: 1 Statement Element: 12 Statement Element contains 1 Value String Elements</statement>
+  </report>
+  <report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">
+    <statement>Error: Description Element: 1 Statement Element: 14 DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-11-isShownAt-</statement>
+  </report>
+  <failed-assertion test="(dcds:ValueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema')">
+    <statement>Error: Description Element: 1 Statement Element: 15 SES URI must be from list specified by statement template dt-1-stp-12-subject-</statement>
+  </failed-assertion>
+  <failed-assertion test="(dcds:ValueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema')">
+    <statement>Error: Description Element: 1 Statement Element: 16 SES URI must be from list specified by statement template dt-1-stp-12-subject-</statement>
+  </failed-assertion>
+  <failed-assertion test="count(dcds:valueString) &gt;= 1">
+    <statement>Error: Description Element: 1 Statement Element: 19 Minimum number of Value String Elements matching statement template dt-1-stp-15-bibliographicCitation- not present.  Present: 0 Minimum required: 1</statement>
+  </failed-assertion>
+  <failed-assertion test="(dcds:ValueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema')">
+    <statement>Error: Description Element: 1 Statement Element: 19 SES URI must be from list specified by statement template dt-1-stp-15-bibliographicCitation-</statement>
+  </failed-assertion>
+  <report test="count(dcds:valueString)">
+    <statement>Report: Description Element: 1 Statement Element: 20 Statement Element contains 1 Value String Elements</statement>
+  </report>
+  <failed-assertion test="dcds:literalValueString">
+    <statement>Error: Description Element: 1 Statement Element: 23 Literal Value String element required by statement template dt-1-stp-19-license-</statement>
+  </failed-assertion>
+  <report test="count(dcds:valueString)">
+    <statement>Report: Description Element: 1 Statement Element: 24 Statement Element contains 1 Value String Elements</statement>
+  </report>
+  <report test="count(dcds:valueString)">
+    <statement>Report: Description Element: 1 Statement Element: 25 Statement Element contains 1 Value String Elements</statement>
+  </report>
+  <report test="(@dcds:valueURI and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]][@dcds:resourceURI = $valueURI])) or (@dcds:valueRef and not(/dcds:descriptionSet/dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]][@dcds:resourceId = $valueRef]))">
+    <statement>Error: Description Element: 1 Statement Element: 34 DescriptionTemplateRef specified, so either the valueRef attribute value must match a resourceId attribute value, or the valueURI attribute value must match a resourceURI attribute value, on a Description Element matching the specified description template.dt-1-stp-33-hasResearch-</statement>
+  </report>
+  <failed-assertion test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']) &gt;= 1">
+    <statement>Error: Description Element: 4 Minimum number of Statement Elements matching statement template dt-3-st-2-type- not present. Present: 0 Minimum required: 1</statement>
+  </failed-assertion>
+  <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date'])">
+    <statement>Report: Description Element: 4 Description Element contains 1 Statement Elements matching statement template dt-3-st-3-date-</statement>
+  </report>
+  <report test="count(dcds:statement[not((@dcds:propertyURI='http://purl.org/dc/terms/identifier') or (@dcds:propertyURI='http://purl.org/dc/terms/type') or (@dcds:propertyURI='http://purl.org/dc/terms/date'))])">
+    <statement>Error: Description Element: 4 Description Element contains 3 Statement Elements with no matching statement template</statement>
+  </report>
+  <failed-assertion test="(dcds:literalValueString/@dcds:sesURI = 'http://purl.org/dc/terms/W3CDTF')">
+    <statement>Error: Description Element: 4 Statement Element: 3 SES URI must be from list specified by statement template dt-3-stp-3-date-</statement>
+  </failed-assertion>
+</result>
