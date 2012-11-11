@@ -226,7 +226,7 @@
     </dcds:statement>
 
 <!--
-	not allowed since we have a descriptionTemplateRef in the DSP...
+	not allowed since we have a descriptionTemplateRef in the DSP... 
     <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/contributor" dcds:valueURI="http://voa3r.eu/people/29/foaf" />
 -->
     <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/contributor" dcds:valueRef="person1" />

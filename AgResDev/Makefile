@@ -1,3 +1,5 @@
+.DEFAULT_GOAL = all
+
 XT = ./xt.pl
 DATE=$(shell date +%I:%M%p)
 CHECK=\033[32m✔\033[39m
@@ -45,4 +47,3 @@ test:
 	@echo "Report saved in ${TESTREPORT}. `grep -c Error ${TESTREPORT}` errors found!"
 
 all: rules isorules test
-   

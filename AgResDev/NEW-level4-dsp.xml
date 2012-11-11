@@ -39,7 +39,8 @@
     </StatementTemplate>
 
     <StatementTemplate ID="contributor" minOccurs="0" type='nonliteral'>
-      <Property>http://purl.org/dc/terms/contributor</Property>
+     <SubPropertyOf>http://purl.org/dc/terms/contributor</SubPropertyOf>
+     <Property>http://purl.org/dc/terms/contributor</Property>
       <NonLiteralConstraint descriptionTemplateRef="agent">
         <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
         <ValueStringConstraint maxOccurs="0"/>
