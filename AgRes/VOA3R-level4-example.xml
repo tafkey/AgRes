@@ -38,9 +38,7 @@
 
     <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/date">
 		<!-- which is correct, DSP asks for W3CDTF ???? -->
-<!--
-      <dcds:literalValueString dcds:sesURI="http://www.w3.org/2001/XMLSchema#date">2001-07-18</dcds:literalValueString>
--->
+<!--    <dcds:literalValueString dcds:sesURI="http://www.w3.org/2001/XMLSchema#date">2001-07-18</dcds:literalValueString>  -->
       <dcds:literalValueString dcds:sesURI="http://purl.org/dc/terms/W3CDTF">2001-07-18</dcds:literalValueString>
     </dcds:statement>
 
@@ -49,7 +47,9 @@
     </dcds:statement>
 
  	<!-- element 9 -->
-    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/identifier" dcds:valueURI="http://voa3r.eu/documents/553/" />
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/identifier" 
+        dcds:sesURI="http://purl.org/dc/terms/URI" 
+        dcds:valueURI="http://voa3r.eu/documents/553/" />
 
     <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/identifier">
       <dcds:valueString dcds:sesURI="http://voa3r.eu/terms/EncodedSchema">ISBN:91-576-6485-4</dcds:valueString>
@@ -72,12 +72,12 @@
     <!-- Subject -->
 
 	<!-- element 14 -->
-    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/subject" dcds:valueURI="http://aims.fao.org/aos/agrovoc/c_6599" />
-<!--
+    <!-- <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/subject" dcds:valueURI="http://aims.fao.org/aos/agrovoc/c_6599" /> -->
+
     <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/subject">
       <dcds:valueString dcds:sesURI="http://purl.org/dc/terms/URI">http://aims.fao.org/aos/agrovoc/c_6599</dcds:valueString>
     </dcds:statement>
--->
+
 
 	<!-- element 15 -->
     <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/subject">
