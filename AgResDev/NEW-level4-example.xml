@@ -49,10 +49,7 @@
     </dcds:statement>
 
 	<!-- element 9 -->
-<!--
     <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/identifier" dcds:valueURI="http://voa3r.eu/documents/553/" />
--->
-    <dcds:statement dcds:sesURI="http://voa3r.eu/terms/EncodedSchema" dcds:propertyURI="http://purl.org/dc/terms/identifier" dcds:ValueURI="http://voa3r.eu/documents/553" />
 
     <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/identifier">
 <!--

@@ -11,6 +11,8 @@ Pete Johnson
 <http://dublincore.org/documents/2008/11/03/profile-guidelines/>
 
 
+e-prints AP (SWAP): <http://www.ukoln.ac.uk/repositories/digirep/index/Eprints_Application_Profile>
+and <http://dublincore.org/scholarwiki/SWAPDSP?action=DSP2XML>
 
 ### EXAMPLE 
 

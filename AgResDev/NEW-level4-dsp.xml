@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <DescriptionSetTemplate xmlns="http://dublincore.org/xml/dc-dsp/2008/01/14" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://dublincore.org/xml/dc-dsp/2008/01/14 http://dublincore.org/architecturewiki/DescriptionSetProfile?action=AttachFile&amp;do=get&amp;target=dcmi-dsp.xsd">
 
-  <DescriptionTemplate ID="AgResResource" minOccurs="1" maxOccurs="1">
+  <DescriptionTemplate ID="AgResResource" minOccurs="1" maxOccurs="1" standalone="yes">
 
 	<!-- +++ new -->
     <ResourceClass>http://voa3r.eu/class/Resource</ResourceClass>
@@ -71,11 +71,16 @@
       </NonLiteralConstraint>
     </StatementTemplate>
 
-    <StatementTemplate ID="identifier" minOccurs="0" type="nonliteral">
+    <StatementTemplate ID="identifier" minOccurs="0">
       <Property>http://purl.org/dc/terms/identifier</Property>
+      <LiteralConstraint>
+        <ValueURIOccurrence>mandatory</ValueURIOccurrence>      
+      </LiteralConstraint>
       <NonLiteralConstraint>
-	    <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
-        <ValueStringConstraint minOccurs="0" maxOccurs="1"/>
+        <ValueURIOccurrence>dissalowed</ValueURIOccurrence>      
+        <ValueStringConstraint minOccurs="0" maxOccurs="1">
+		  <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
+		</ValueStringConstraint>
       </NonLiteralConstraint>
     </StatementTemplate>
 
@@ -103,11 +108,16 @@
       </NonLiteralConstraint>
     </StatementTemplate>
 
-    <StatementTemplate ID="subject" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/subject</Property>      
+    <StatementTemplate ID="subject" minOccurs="0">
+      <Property>http://purl.org/dc/terms/subject</Property> 
+      <LiteralConstraint>
+        <ValueURIOccurrence>mandatory</ValueURIOccurrence>      
+      </LiteralConstraint>
       <NonLiteralConstraint>
-        <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
-        <ValueStringConstraint minOccurs="0" maxOccurs="1"/>
+        <ValueURIOccurrence>dissalowed</ValueURIOccurrence>      
+        <ValueStringConstraint minOccurs="0" maxOccurs="1">
+          <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
+        </ValueStringConstraint>
       </NonLiteralConstraint>
     </StatementTemplate>
 

@@ -50,7 +50,7 @@
     </axsl:if>
     <axsl:apply-templates select="." mode="M2"/>
   </axsl:template>
-  <axsl:template match="dcds:descriptionSet" mode="all" priority="58">
+  <axsl:template match="dcds:descriptionSet" mode="all" priority="56">
     <axsl:call-template name="R1.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
@@ -58,6 +58,14 @@
     <axsl:apply-templates select="." mode="M2"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]" mode="M2" priority="2" name="R2.1">
+    <axsl:variable name="resourceURI" select="@dcds:resourceURI"/>
+    <axsl:variable name="resourceId" select="@dcds:resourceId"/>
+    <axsl:if test="/dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueURI = $resourceURI] or /dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueRef = $resourceId]">
+      <report test="/dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueURI = $resourceURI] or /dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueRef = $resourceId]">
+        <axsl:call-template name="location"/>
+        <statement>Error: Description Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:description)"/> Resource is referred to as value, but description template specifies standalone="yes"</statement>
+      </report>
+    </axsl:if>
     <axsl:if test="count(dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type'])">
       <report test="count(dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type'])">
         <axsl:call-template name="location"/>
@@ -354,7 +362,7 @@
     </axsl:if>
     <axsl:apply-templates select="." mode="M3"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]" mode="all" priority="57">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]" mode="all" priority="55">
     <axsl:call-template name="R2.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
@@ -407,7 +415,7 @@
     </axsl:if>
     <axsl:apply-templates select="." mode="M4"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type']" mode="all" priority="56">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type']" mode="all" priority="54">
     <axsl:call-template name="R3.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
@@ -429,7 +437,7 @@
     </axsl:if>
     <axsl:apply-templates select="." mode="M5"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/title']" mode="all" priority="55">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/title']" mode="all" priority="53">
     <axsl:call-template name="R4.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
@@ -451,7 +459,7 @@
     </axsl:if>
     <axsl:apply-templates select="." mode="M6"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/alternative']" mode="all" priority="54">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/alternative']" mode="all" priority="52">
     <axsl:call-template name="R5.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
@@ -493,7 +501,7 @@
     </axsl:if>
     <axsl:apply-templates select="." mode="M7"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/creator']" mode="all" priority="53">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/creator']" mode="all" priority="51">
     <axsl:call-template name="R6.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
@@ -535,7 +543,7 @@
     </axsl:if>
     <axsl:apply-templates select="." mode="M8"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/contributor']" mode="all" priority="52">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/contributor']" mode="all" priority="50">
     <axsl:call-template name="R7.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
@@ -577,7 +585,7 @@
     </axsl:if>
     <axsl:apply-templates select="." mode="M9"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/publisher']" mode="all" priority="51">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/publisher']" mode="all" priority="49">
     <axsl:call-template name="R8.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
@@ -599,7 +607,7 @@
     </axsl:if>
     <axsl:apply-templates select="." mode="M10"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date']" mode="all" priority="50">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date']" mode="all" priority="48">
     <axsl:call-template name="R9.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
@@ -646,49 +654,14 @@
     </axsl:if>
     <axsl:apply-templates select="." mode="M11"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/language']" mode="all" priority="49">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/language']" mode="all" priority="47">
     <axsl:call-template name="R10.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M10">
     <axsl:apply-templates select="." mode="M11"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier']" mode="M11" priority="2" name="R11.1">
-    <axsl:if test="not(not(@dcds:valueRef))">
-      <failed-assertion test="not(@dcds:valueRef)">
-        <axsl:call-template name="location"/>
-        <statement>Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-9-identifier-</statement>
-      </failed-assertion>
-    </axsl:if>
-    <axsl:variable name="valueURI" select="@dcds:valueURI"/>
-    <axsl:if test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">
-      <report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">
-        <axsl:call-template name="location"/>
-        <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-9-identifier-</statement>
-      </report>
-    </axsl:if>
-    <axsl:if test="count(dcds:valueString)">
-      <report test="count(dcds:valueString)">
-        <axsl:call-template name="location"/>
-        <statement>Report: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Statement Element contains <axsl:value-of select="count(dcds:valueString)"/> Value String Elements</statement>
-      </report>
-    </axsl:if>
-    <axsl:if test="not(count(dcds:valueString) &lt;= 1)">
-      <failed-assertion test="count(dcds:valueString) &lt;= 1">
-        <axsl:call-template name="location"/>
-        <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-9-identifier- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 1</statement>
-      </failed-assertion>
-    </axsl:if>
-    <axsl:apply-templates select="." mode="M12"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier']" mode="all" priority="48">
-    <axsl:call-template name="R11.1"/>
-    <axsl:apply-templates select="*" mode="all"/>
-  </axsl:template>
-  <axsl:template match="*" mode="M11">
-    <axsl:apply-templates select="." mode="M12"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/format']" mode="M12" priority="2" name="R12.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/format']" mode="M11" priority="2" name="R11.1">
     <axsl:if test="not(not(@dcds:valueRef))">
       <failed-assertion test="not(@dcds:valueRef)">
         <axsl:call-template name="location"/>
@@ -726,16 +699,16 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-10-format- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 1</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M13"/>
+    <axsl:apply-templates select="." mode="M12"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/format']" mode="all" priority="47">
-    <axsl:call-template name="R12.1"/>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/format']" mode="all" priority="46">
+    <axsl:call-template name="R11.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M12">
-    <axsl:apply-templates select="." mode="M13"/>
+  <axsl:template match="*" mode="M11">
+    <axsl:apply-templates select="." mode="M12"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownBy']" mode="M13" priority="2" name="R13.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownBy']" mode="M12" priority="2" name="R12.1">
     <axsl:if test="not(not(@dcds:valueRef))">
       <failed-assertion test="not(@dcds:valueRef)">
         <axsl:call-template name="location"/>
@@ -767,16 +740,16 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-11-isShownBy- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M14"/>
+    <axsl:apply-templates select="." mode="M13"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownBy']" mode="all" priority="46">
-    <axsl:call-template name="R13.1"/>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownBy']" mode="all" priority="45">
+    <axsl:call-template name="R12.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M13">
-    <axsl:apply-templates select="." mode="M14"/>
+  <axsl:template match="*" mode="M12">
+    <axsl:apply-templates select="." mode="M13"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownAt']" mode="M14" priority="2" name="R14.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownAt']" mode="M13" priority="2" name="R13.1">
     <axsl:if test="not(not(@dcds:valueRef))">
       <failed-assertion test="not(@dcds:valueRef)">
         <axsl:call-template name="location"/>
@@ -808,99 +781,64 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-12-isShownAt- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M15"/>
+    <axsl:apply-templates select="." mode="M14"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownAt']" mode="all" priority="45">
-    <axsl:call-template name="R14.1"/>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownAt']" mode="all" priority="44">
+    <axsl:call-template name="R13.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M14">
-    <axsl:apply-templates select="." mode="M15"/>
+  <axsl:template match="*" mode="M13">
+    <axsl:apply-templates select="." mode="M14"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/subject']" mode="M15" priority="2" name="R15.1">
-    <axsl:if test="not(not(@dcds:valueRef))">
-      <failed-assertion test="not(@dcds:valueRef)">
-        <axsl:call-template name="location"/>
-        <statement>Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-13-subject-</statement>
-      </failed-assertion>
-    </axsl:if>
-    <axsl:variable name="valueURI" select="@dcds:valueURI"/>
-    <axsl:if test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">
-      <report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">
-        <axsl:call-template name="location"/>
-        <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-13-subject-</statement>
-      </report>
-    </axsl:if>
-    <axsl:if test="count(dcds:valueString)">
-      <report test="count(dcds:valueString)">
-        <axsl:call-template name="location"/>
-        <statement>Report: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Statement Element contains <axsl:value-of select="count(dcds:valueString)"/> Value String Elements</statement>
-      </report>
-    </axsl:if>
-    <axsl:if test="not(count(dcds:valueString) &lt;= 1)">
-      <failed-assertion test="count(dcds:valueString) &lt;= 1">
-        <axsl:call-template name="location"/>
-        <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-13-subject- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 1</statement>
-      </failed-assertion>
-    </axsl:if>
-    <axsl:apply-templates select="." mode="M16"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/subject']" mode="all" priority="44">
-    <axsl:call-template name="R15.1"/>
-    <axsl:apply-templates select="*" mode="all"/>
-  </axsl:template>
-  <axsl:template match="*" mode="M15">
-    <axsl:apply-templates select="." mode="M16"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/description']" mode="M16" priority="2" name="R16.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/description']" mode="M14" priority="2" name="R14.1">
     <axsl:if test="not(dcds:literalValueString)">
       <failed-assertion test="dcds:literalValueString">
         <axsl:call-template name="location"/>
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-14-description-</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M17"/>
+    <axsl:apply-templates select="." mode="M15"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/description']" mode="all" priority="43">
-    <axsl:call-template name="R16.1"/>
+    <axsl:call-template name="R14.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M16">
-    <axsl:apply-templates select="." mode="M17"/>
+  <axsl:template match="*" mode="M14">
+    <axsl:apply-templates select="." mode="M15"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/abstract']" mode="M17" priority="2" name="R17.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/abstract']" mode="M15" priority="2" name="R15.1">
     <axsl:if test="not(dcds:literalValueString)">
       <failed-assertion test="dcds:literalValueString">
         <axsl:call-template name="location"/>
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-15-abstract-</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M18"/>
+    <axsl:apply-templates select="." mode="M16"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/abstract']" mode="all" priority="42">
-    <axsl:call-template name="R17.1"/>
+    <axsl:call-template name="R15.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M17">
-    <axsl:apply-templates select="." mode="M18"/>
+  <axsl:template match="*" mode="M15">
+    <axsl:apply-templates select="." mode="M16"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/bibliographicCitation']" mode="M18" priority="2" name="R18.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/bibliographicCitation']" mode="M16" priority="2" name="R16.1">
     <axsl:if test="not(dcds:literalValueString)">
       <failed-assertion test="dcds:literalValueString">
         <axsl:call-template name="location"/>
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-16-bibliographicCitation-</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M19"/>
+    <axsl:apply-templates select="." mode="M17"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/bibliographicCitation']" mode="all" priority="41">
-    <axsl:call-template name="R18.1"/>
+    <axsl:call-template name="R16.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M18">
-    <axsl:apply-templates select="." mode="M19"/>
+  <axsl:template match="*" mode="M16">
+    <axsl:apply-templates select="." mode="M17"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']" mode="M19" priority="2" name="R19.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']" mode="M17" priority="2" name="R17.1">
     <axsl:if test="not(not(@dcds:valueRef))">
       <failed-assertion test="not(@dcds:valueRef)">
         <axsl:call-template name="location"/>
@@ -938,32 +876,32 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-17-type- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 1</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M20"/>
+    <axsl:apply-templates select="." mode="M18"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']" mode="all" priority="40">
-    <axsl:call-template name="R19.1"/>
+    <axsl:call-template name="R17.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M19">
-    <axsl:apply-templates select="." mode="M20"/>
+  <axsl:template match="*" mode="M17">
+    <axsl:apply-templates select="." mode="M18"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/rights']" mode="M20" priority="2" name="R20.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/rights']" mode="M18" priority="2" name="R18.1">
     <axsl:if test="not(dcds:literalValueString)">
       <failed-assertion test="dcds:literalValueString">
         <axsl:call-template name="location"/>
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-18-rights-</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M21"/>
+    <axsl:apply-templates select="." mode="M19"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/rights']" mode="all" priority="39">
-    <axsl:call-template name="R20.1"/>
+    <axsl:call-template name="R18.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M20">
-    <axsl:apply-templates select="." mode="M21"/>
+  <axsl:template match="*" mode="M18">
+    <axsl:apply-templates select="." mode="M19"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/accessRights']" mode="M21" priority="2" name="R21.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/accessRights']" mode="M19" priority="2" name="R19.1">
     <axsl:if test="not(not(@dcds:valueRef))">
       <failed-assertion test="not(@dcds:valueRef)">
         <axsl:call-template name="location"/>
@@ -983,26 +921,26 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> VES URI must be from list specified by statement template dt-1-stp-19-accessRights-</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M22"/>
+    <axsl:apply-templates select="." mode="M20"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/accessRights']" mode="all" priority="38">
-    <axsl:call-template name="R21.1"/>
+    <axsl:call-template name="R19.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M21">
-    <axsl:apply-templates select="." mode="M22"/>
+  <axsl:template match="*" mode="M19">
+    <axsl:apply-templates select="." mode="M20"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/license']" mode="M22" priority="2" name="R22.1">
-    <axsl:apply-templates select="." mode="M23"/>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/license']" mode="M20" priority="2" name="R20.1">
+    <axsl:apply-templates select="." mode="M21"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/license']" mode="all" priority="37">
-    <axsl:call-template name="R22.1"/>
+    <axsl:call-template name="R20.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M22">
-    <axsl:apply-templates select="." mode="M23"/>
+  <axsl:template match="*" mode="M20">
+    <axsl:apply-templates select="." mode="M21"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/reviewStatus']" mode="M23" priority="2" name="R23.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/reviewStatus']" mode="M21" priority="2" name="R21.1">
     <axsl:if test="not(not(@dcds:valueRef))">
       <failed-assertion test="not(@dcds:valueRef)">
         <axsl:call-template name="location"/>
@@ -1040,16 +978,16 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-21-reviewStatus- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 1</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M24"/>
+    <axsl:apply-templates select="." mode="M22"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/reviewStatus']" mode="all" priority="36">
-    <axsl:call-template name="R23.1"/>
+    <axsl:call-template name="R21.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M23">
-    <axsl:apply-templates select="." mode="M24"/>
+  <axsl:template match="*" mode="M21">
+    <axsl:apply-templates select="." mode="M22"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/publicationStatus']" mode="M24" priority="2" name="R24.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/publicationStatus']" mode="M22" priority="2" name="R22.1">
     <axsl:if test="not(not(@dcds:valueRef))">
       <failed-assertion test="not(@dcds:valueRef)">
         <axsl:call-template name="location"/>
@@ -1087,116 +1025,116 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-22-publicationStatus- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 1</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M25"/>
+    <axsl:apply-templates select="." mode="M23"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/publicationStatus']" mode="all" priority="35">
+    <axsl:call-template name="R22.1"/>
+    <axsl:apply-templates select="*" mode="all"/>
+  </axsl:template>
+  <axsl:template match="*" mode="M22">
+    <axsl:apply-templates select="." mode="M23"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/relation']" mode="M23" priority="2" name="R23.1">
+    <axsl:apply-templates select="." mode="M24"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/relation']" mode="all" priority="34">
+    <axsl:call-template name="R23.1"/>
+    <axsl:apply-templates select="*" mode="all"/>
+  </axsl:template>
+  <axsl:template match="*" mode="M23">
+    <axsl:apply-templates select="." mode="M24"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/conformsTo']" mode="M24" priority="2" name="R24.1">
+    <axsl:apply-templates select="." mode="M25"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/conformsTo']" mode="all" priority="33">
     <axsl:call-template name="R24.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M24">
     <axsl:apply-templates select="." mode="M25"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/relation']" mode="M25" priority="2" name="R25.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/references']" mode="M25" priority="2" name="R25.1">
     <axsl:apply-templates select="." mode="M26"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/relation']" mode="all" priority="34">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/references']" mode="all" priority="32">
     <axsl:call-template name="R25.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M25">
     <axsl:apply-templates select="." mode="M26"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/conformsTo']" mode="M26" priority="2" name="R26.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isReferencedBy']" mode="M26" priority="2" name="R26.1">
     <axsl:apply-templates select="." mode="M27"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/conformsTo']" mode="all" priority="33">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isReferencedBy']" mode="all" priority="31">
     <axsl:call-template name="R26.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M26">
     <axsl:apply-templates select="." mode="M27"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/references']" mode="M27" priority="2" name="R27.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasPart']" mode="M27" priority="2" name="R27.1">
     <axsl:apply-templates select="." mode="M28"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/references']" mode="all" priority="32">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasPart']" mode="all" priority="30">
     <axsl:call-template name="R27.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M27">
     <axsl:apply-templates select="." mode="M28"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isReferencedBy']" mode="M28" priority="2" name="R28.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isPartOf']" mode="M28" priority="2" name="R28.1">
     <axsl:apply-templates select="." mode="M29"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isReferencedBy']" mode="all" priority="31">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isPartOf']" mode="all" priority="29">
     <axsl:call-template name="R28.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M28">
     <axsl:apply-templates select="." mode="M29"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasPart']" mode="M29" priority="2" name="R29.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasVersion']" mode="M29" priority="2" name="R29.1">
     <axsl:apply-templates select="." mode="M30"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasPart']" mode="all" priority="30">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasVersion']" mode="all" priority="28">
     <axsl:call-template name="R29.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M29">
     <axsl:apply-templates select="." mode="M30"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isPartOf']" mode="M30" priority="2" name="R30.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isVersionOf']" mode="M30" priority="2" name="R30.1">
     <axsl:apply-templates select="." mode="M31"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isPartOf']" mode="all" priority="29">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isVersionOf']" mode="all" priority="27">
     <axsl:call-template name="R30.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M30">
     <axsl:apply-templates select="." mode="M31"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasVersion']" mode="M31" priority="2" name="R31.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasTranslation']" mode="M31" priority="2" name="R31.1">
     <axsl:apply-templates select="." mode="M32"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasVersion']" mode="all" priority="28">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasTranslation']" mode="all" priority="26">
     <axsl:call-template name="R31.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M31">
     <axsl:apply-templates select="." mode="M32"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isVersionOf']" mode="M32" priority="2" name="R32.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/isTranslationOf']" mode="M32" priority="2" name="R32.1">
     <axsl:apply-templates select="." mode="M33"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isVersionOf']" mode="all" priority="27">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/isTranslationOf']" mode="all" priority="25">
     <axsl:call-template name="R32.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M32">
     <axsl:apply-templates select="." mode="M33"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasTranslation']" mode="M33" priority="2" name="R33.1">
-    <axsl:apply-templates select="." mode="M34"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasTranslation']" mode="all" priority="26">
-    <axsl:call-template name="R33.1"/>
-    <axsl:apply-templates select="*" mode="all"/>
-  </axsl:template>
-  <axsl:template match="*" mode="M33">
-    <axsl:apply-templates select="." mode="M34"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/isTranslationOf']" mode="M34" priority="2" name="R34.1">
-    <axsl:apply-templates select="." mode="M35"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/isTranslationOf']" mode="all" priority="25">
-    <axsl:call-template name="R34.1"/>
-    <axsl:apply-templates select="*" mode="all"/>
-  </axsl:template>
-  <axsl:template match="*" mode="M34">
-    <axsl:apply-templates select="." mode="M35"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasMetametadata']" mode="M35" priority="2" name="R35.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasMetametadata']" mode="M33" priority="2" name="R33.1">
     <axsl:if test="not(@dcds:valueURI or @dcds:valueRef)">
       <failed-assertion test="@dcds:valueURI or @dcds:valueRef">
         <axsl:call-template name="location"/>
@@ -1229,16 +1167,16 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-33-hasMetametadata- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M36"/>
+    <axsl:apply-templates select="." mode="M34"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasMetametadata']" mode="all" priority="24">
-    <axsl:call-template name="R35.1"/>
+    <axsl:call-template name="R33.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M35">
-    <axsl:apply-templates select="." mode="M36"/>
+  <axsl:template match="*" mode="M33">
+    <axsl:apply-templates select="." mode="M34"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasResearch']" mode="M36" priority="2" name="R36.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasResearch']" mode="M34" priority="2" name="R34.1">
     <axsl:if test="not(@dcds:valueURI or @dcds:valueRef)">
       <failed-assertion test="@dcds:valueURI or @dcds:valueRef">
         <axsl:call-template name="location"/>
@@ -1271,16 +1209,16 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-34-hasResearch- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M37"/>
+    <axsl:apply-templates select="." mode="M35"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasResearch']" mode="all" priority="23">
-    <axsl:call-template name="R36.1"/>
+    <axsl:call-template name="R34.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M36">
-    <axsl:apply-templates select="." mode="M37"/>
+  <axsl:template match="*" mode="M34">
+    <axsl:apply-templates select="." mode="M35"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]" mode="M37" priority="2" name="R37.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]" mode="M35" priority="2" name="R35.1">
     <axsl:variable name="resourceURI" select="@dcds:resourceURI"/>
     <axsl:variable name="resourceId" select="@dcds:resourceId"/>
     <axsl:if test="not(/dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueURI = $resourceURI] or /dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueRef = $resourceId])">
@@ -1349,16 +1287,16 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:description)"/> Description Element contains <axsl:value-of select="count(dcds:statement[not((@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type') or (@dcds:propertyURI='http://purl.org/dc/terms/type') or (@dcds:propertyURI='http://xmlns.com/foaf/0.1/name') or (@dcds:propertyURI='http://xmlns.com/foaf/0.1/firstName') or (@dcds:propertyURI='http://xmlns.com/foaf/0.1/lastName') or (@dcds:propertyURI='http://xmlns.com/foaf/0.1/mbox'))])"/> Statement Elements with no matching statement template </statement>
       </report>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M38"/>
+    <axsl:apply-templates select="." mode="M36"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]" mode="all" priority="22">
-    <axsl:call-template name="R37.1"/>
+    <axsl:call-template name="R35.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M37">
-    <axsl:apply-templates select="." mode="M38"/>
+  <axsl:template match="*" mode="M35">
+    <axsl:apply-templates select="." mode="M36"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type']" mode="M38" priority="2" name="R38.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type']" mode="M36" priority="2" name="R36.1">
     <axsl:if test="not(not(@dcds:valueRef))">
       <failed-assertion test="not(@dcds:valueRef)">
         <axsl:call-template name="location"/>
@@ -1402,74 +1340,74 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-2-stp-1-class- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M39"/>
+    <axsl:apply-templates select="." mode="M37"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type']" mode="all" priority="21">
-    <axsl:call-template name="R38.1"/>
+    <axsl:call-template name="R36.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M38">
-    <axsl:apply-templates select="." mode="M39"/>
+  <axsl:template match="*" mode="M36">
+    <axsl:apply-templates select="." mode="M37"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']" mode="M39" priority="2" name="R39.1">
-    <axsl:apply-templates select="." mode="M40"/>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']" mode="M37" priority="2" name="R37.1">
+    <axsl:apply-templates select="." mode="M38"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']" mode="all" priority="20">
-    <axsl:call-template name="R39.1"/>
+    <axsl:call-template name="R37.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M39">
-    <axsl:apply-templates select="." mode="M40"/>
+  <axsl:template match="*" mode="M37">
+    <axsl:apply-templates select="." mode="M38"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/name']" mode="M40" priority="2" name="R40.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/name']" mode="M38" priority="2" name="R38.1">
     <axsl:if test="not(dcds:literalValueString)">
       <failed-assertion test="dcds:literalValueString">
         <axsl:call-template name="location"/>
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-2-stp-3-name-</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M41"/>
+    <axsl:apply-templates select="." mode="M39"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/name']" mode="all" priority="19">
-    <axsl:call-template name="R40.1"/>
+    <axsl:call-template name="R38.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M40">
-    <axsl:apply-templates select="." mode="M41"/>
+  <axsl:template match="*" mode="M38">
+    <axsl:apply-templates select="." mode="M39"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/firstName']" mode="M41" priority="2" name="R41.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/firstName']" mode="M39" priority="2" name="R39.1">
     <axsl:if test="not(dcds:literalValueString)">
       <failed-assertion test="dcds:literalValueString">
         <axsl:call-template name="location"/>
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-2-stp-4-firstName-</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M42"/>
+    <axsl:apply-templates select="." mode="M40"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/firstName']" mode="all" priority="18">
-    <axsl:call-template name="R41.1"/>
+    <axsl:call-template name="R39.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M41">
-    <axsl:apply-templates select="." mode="M42"/>
+  <axsl:template match="*" mode="M39">
+    <axsl:apply-templates select="." mode="M40"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/lastName']" mode="M42" priority="2" name="R42.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/lastName']" mode="M40" priority="2" name="R40.1">
     <axsl:if test="not(dcds:literalValueString)">
       <failed-assertion test="dcds:literalValueString">
         <axsl:call-template name="location"/>
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-2-stp-5-lastName-</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M43"/>
+    <axsl:apply-templates select="." mode="M41"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/lastName']" mode="all" priority="17">
-    <axsl:call-template name="R42.1"/>
+    <axsl:call-template name="R40.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M42">
-    <axsl:apply-templates select="." mode="M43"/>
+  <axsl:template match="*" mode="M40">
+    <axsl:apply-templates select="." mode="M41"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/mbox']" mode="M43" priority="2" name="R43.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/mbox']" mode="M41" priority="2" name="R41.1">
     <axsl:if test="not(not(@dcds:valueRef))">
       <failed-assertion test="not(@dcds:valueRef)">
         <axsl:call-template name="location"/>
@@ -1489,16 +1427,16 @@
         <statement>Error: Value URI required by statement template dt-2-stp-6-mbox-</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M44"/>
+    <axsl:apply-templates select="." mode="M42"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://xmlns.com/foaf/0.1/Agent')]]/dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/mbox']" mode="all" priority="16">
-    <axsl:call-template name="R43.1"/>
+    <axsl:call-template name="R41.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M43">
-    <axsl:apply-templates select="." mode="M44"/>
+  <axsl:template match="*" mode="M41">
+    <axsl:apply-templates select="." mode="M42"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]" mode="M44" priority="2" name="R44.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]" mode="M42" priority="2" name="R42.1">
     <axsl:variable name="resourceURI" select="@dcds:resourceURI"/>
     <axsl:variable name="resourceId" select="@dcds:resourceId"/>
     <axsl:if test="not(/dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueURI = $resourceURI] or /dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueRef = $resourceId])">
@@ -1585,16 +1523,16 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:description)"/> Description Element contains <axsl:value-of select="count(dcds:statement[not((@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type') or (@dcds:propertyURI='http://purl.org/dc/terms/identifier') or (@dcds:propertyURI='http://purl.org/dc/terms/type') or (@dcds:propertyURI='http://purl.org/dc/terms/date') or (@dcds:propertyURI='http://purl.org/dc/terms/contributor'))])"/> Statement Elements with no matching statement template </statement>
       </report>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M45"/>
+    <axsl:apply-templates select="." mode="M43"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]" mode="all" priority="15">
-    <axsl:call-template name="R44.1"/>
+    <axsl:call-template name="R42.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M44">
-    <axsl:apply-templates select="." mode="M45"/>
+  <axsl:template match="*" mode="M42">
+    <axsl:apply-templates select="." mode="M43"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type']" mode="M45" priority="2" name="R45.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type']" mode="M43" priority="2" name="R43.1">
     <axsl:if test="not(not(@dcds:valueRef))">
       <failed-assertion test="not(@dcds:valueRef)">
         <axsl:call-template name="location"/>
@@ -1638,36 +1576,36 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-3-stp-1-class- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M46"/>
+    <axsl:apply-templates select="." mode="M44"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type']" mode="all" priority="14">
+    <axsl:call-template name="R43.1"/>
+    <axsl:apply-templates select="*" mode="all"/>
+  </axsl:template>
+  <axsl:template match="*" mode="M43">
+    <axsl:apply-templates select="." mode="M44"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier']" mode="M44" priority="2" name="R44.1">
+    <axsl:apply-templates select="." mode="M45"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier']" mode="all" priority="13">
+    <axsl:call-template name="R44.1"/>
+    <axsl:apply-templates select="*" mode="all"/>
+  </axsl:template>
+  <axsl:template match="*" mode="M44">
+    <axsl:apply-templates select="." mode="M45"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']" mode="M45" priority="2" name="R45.1">
+    <axsl:apply-templates select="." mode="M46"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']" mode="all" priority="12">
     <axsl:call-template name="R45.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M45">
     <axsl:apply-templates select="." mode="M46"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier']" mode="M46" priority="2" name="R46.1">
-    <axsl:apply-templates select="." mode="M47"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier']" mode="all" priority="13">
-    <axsl:call-template name="R46.1"/>
-    <axsl:apply-templates select="*" mode="all"/>
-  </axsl:template>
-  <axsl:template match="*" mode="M46">
-    <axsl:apply-templates select="." mode="M47"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']" mode="M47" priority="2" name="R47.1">
-    <axsl:apply-templates select="." mode="M48"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type']" mode="all" priority="12">
-    <axsl:call-template name="R47.1"/>
-    <axsl:apply-templates select="*" mode="all"/>
-  </axsl:template>
-  <axsl:template match="*" mode="M47">
-    <axsl:apply-templates select="." mode="M48"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date']" mode="M48" priority="2" name="R48.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date']" mode="M46" priority="2" name="R46.1">
     <axsl:if test="not(dcds:literalValueString)">
       <failed-assertion test="dcds:literalValueString">
         <axsl:call-template name="location"/>
@@ -1680,16 +1618,16 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> SES URI must be from list specified by statement template dt-3-stp-4-date-</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M49"/>
+    <axsl:apply-templates select="." mode="M47"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date']" mode="all" priority="11">
-    <axsl:call-template name="R48.1"/>
+    <axsl:call-template name="R46.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M48">
-    <axsl:apply-templates select="." mode="M49"/>
+  <axsl:template match="*" mode="M46">
+    <axsl:apply-templates select="." mode="M47"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/contributor']" mode="M49" priority="2" name="R49.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/contributor']" mode="M47" priority="2" name="R47.1">
     <axsl:if test="not(@dcds:valueURI or @dcds:valueRef)">
       <failed-assertion test="@dcds:valueURI or @dcds:valueRef">
         <axsl:call-template name="location"/>
@@ -1722,16 +1660,16 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-3-stp-5-contributor- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M50"/>
+    <axsl:apply-templates select="." mode="M48"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/MetaMetadata')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/contributor']" mode="all" priority="10">
-    <axsl:call-template name="R49.1"/>
+    <axsl:call-template name="R47.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M49">
-    <axsl:apply-templates select="." mode="M50"/>
+  <axsl:template match="*" mode="M47">
+    <axsl:apply-templates select="." mode="M48"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]" mode="M50" priority="2" name="R50.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]" mode="M48" priority="2" name="R48.1">
     <axsl:variable name="resourceURI" select="@dcds:resourceURI"/>
     <axsl:variable name="resourceId" select="@dcds:resourceId"/>
     <axsl:if test="not(/dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueURI = $resourceURI] or /dcds:descriptionSet/dcds:description/dcds:statement[@dcds:valueRef = $resourceId])">
@@ -1800,16 +1738,16 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:description)"/> Description Element contains <axsl:value-of select="count(dcds:statement[not((@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type') or (@dcds:propertyURI='http://voa3r.eu/terms/objectOfInterest') or (@dcds:propertyURI='http://voa3r.eu/terms/measuresVariable') or (@dcds:propertyURI='http://voa3r.eu/terms/usesMethod') or (@dcds:propertyURI='http://voa3r.eu/terms/usesProtocol') or (@dcds:propertyURI='http://voa3r.eu/terms/usesInstrument') or (@dcds:propertyURI='http://voa3r.eu/terms/usesTechnique'))])"/> Statement Elements with no matching statement template </statement>
       </report>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M51"/>
+    <axsl:apply-templates select="." mode="M49"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]" mode="all" priority="9">
-    <axsl:call-template name="R50.1"/>
+    <axsl:call-template name="R48.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M50">
-    <axsl:apply-templates select="." mode="M51"/>
+  <axsl:template match="*" mode="M48">
+    <axsl:apply-templates select="." mode="M49"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type']" mode="M51" priority="2" name="R51.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type']" mode="M49" priority="2" name="R49.1">
     <axsl:if test="not(not(@dcds:valueRef))">
       <failed-assertion test="not(@dcds:valueRef)">
         <axsl:call-template name="location"/>
@@ -1853,71 +1791,71 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-4-stp-1-class- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:apply-templates select="." mode="M52"/>
+    <axsl:apply-templates select="." mode="M50"/>
   </axsl:template>
   <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type']" mode="all" priority="8">
+    <axsl:call-template name="R49.1"/>
+    <axsl:apply-templates select="*" mode="all"/>
+  </axsl:template>
+  <axsl:template match="*" mode="M49">
+    <axsl:apply-templates select="." mode="M50"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/objectOfInterest']" mode="M50" priority="2" name="R50.1">
+    <axsl:apply-templates select="." mode="M51"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/objectOfInterest']" mode="all" priority="7">
+    <axsl:call-template name="R50.1"/>
+    <axsl:apply-templates select="*" mode="all"/>
+  </axsl:template>
+  <axsl:template match="*" mode="M50">
+    <axsl:apply-templates select="." mode="M51"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/measuresVariable']" mode="M51" priority="2" name="R51.1">
+    <axsl:apply-templates select="." mode="M52"/>
+  </axsl:template>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/measuresVariable']" mode="all" priority="6">
     <axsl:call-template name="R51.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M51">
     <axsl:apply-templates select="." mode="M52"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/objectOfInterest']" mode="M52" priority="2" name="R52.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesMethod']" mode="M52" priority="2" name="R52.1">
     <axsl:apply-templates select="." mode="M53"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/objectOfInterest']" mode="all" priority="7">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesMethod']" mode="all" priority="5">
     <axsl:call-template name="R52.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M52">
     <axsl:apply-templates select="." mode="M53"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/measuresVariable']" mode="M53" priority="2" name="R53.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesProtocol']" mode="M53" priority="2" name="R53.1">
     <axsl:apply-templates select="." mode="M54"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/measuresVariable']" mode="all" priority="6">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesProtocol']" mode="all" priority="4">
     <axsl:call-template name="R53.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M53">
     <axsl:apply-templates select="." mode="M54"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesMethod']" mode="M54" priority="2" name="R54.1">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesInstrument']" mode="M54" priority="2" name="R54.1">
     <axsl:apply-templates select="." mode="M55"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesMethod']" mode="all" priority="5">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesInstrument']" mode="all" priority="3">
     <axsl:call-template name="R54.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
   <axsl:template match="*" mode="M54">
     <axsl:apply-templates select="." mode="M55"/>
   </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesProtocol']" mode="M55" priority="2" name="R55.1">
-    <axsl:apply-templates select="." mode="M56"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesProtocol']" mode="all" priority="4">
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesTechnique']" mode="M55" priority="2" name="R55.1"/>
+  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesTechnique']" mode="all" priority="2">
     <axsl:call-template name="R55.1"/>
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
-  <axsl:template match="*" mode="M55">
-    <axsl:apply-templates select="." mode="M56"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesInstrument']" mode="M56" priority="2" name="R56.1">
-    <axsl:apply-templates select="." mode="M57"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesInstrument']" mode="all" priority="3">
-    <axsl:call-template name="R56.1"/>
-    <axsl:apply-templates select="*" mode="all"/>
-  </axsl:template>
-  <axsl:template match="*" mode="M56">
-    <axsl:apply-templates select="." mode="M57"/>
-  </axsl:template>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesTechnique']" mode="M57" priority="2" name="R57.1"/>
-  <axsl:template match="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Research')]]/dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/usesTechnique']" mode="all" priority="2">
-    <axsl:call-template name="R57.1"/>
-    <axsl:apply-templates select="*" mode="all"/>
-  </axsl:template>
-  <axsl:template match="*" mode="M57"/>
+  <axsl:template match="*" mode="M55"/>
   <axsl:template match="*|/" mode="all">
     <axsl:apply-templates select="*" mode="all"/>
   </axsl:template>
