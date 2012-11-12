@@ -687,8 +687,8 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-9-identifier- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 1</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:if test="not(((@dcds:valueURI) or ((dcds:valueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema'))))">
-      <failed-assertion test="((@dcds:valueURI) or ((dcds:valueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema')))">
+    <axsl:if test="not(((@dcds:valueURI) or ((dcds:valueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema') or (dcds:valueString/@dcds:sesURI = 'http://purl.org/dc/terms/URI'))))">
+      <failed-assertion test="((@dcds:valueURI) or ((dcds:valueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema') or (dcds:valueString/@dcds:sesURI = 'http://purl.org/dc/terms/URI')))">
         <axsl:call-template name="location"/>
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> SES URI must be from list specified by statement template dt-1-stp-9-identifier-</statement>
       </failed-assertion>
@@ -857,8 +857,8 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-13-subject- exceeded. Present: <axsl:value-of select="count(dcds:valueString)"/> Maximum permitted: 1</statement>
       </failed-assertion>
     </axsl:if>
-    <axsl:if test="not(((@dcds:valueURI) or ((dcds:valueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema'))))">
-      <failed-assertion test="((@dcds:valueURI) or ((dcds:valueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema')))">
+    <axsl:if test="not(((@dcds:valueURI) or ((dcds:valueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema') or (dcds:valueString/@dcds:sesURI = 'http://purl.org/dc/terms/URI'))))">
+      <failed-assertion test="((@dcds:valueURI) or ((dcds:valueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema') or (dcds:valueString/@dcds:sesURI = 'http://purl.org/dc/terms/URI')))">
         <axsl:call-template name="location"/>
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> SES URI must be from list specified by statement template dt-1-stp-13-subject-</statement>
       </failed-assertion>
