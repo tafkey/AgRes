@@ -1,4 +1,8 @@
-<http://dublincore.org/documents/dc-ds-xml/>
+	<http://dublincore.org/documents/dc-ds-xml/>
+
+<http://dublincore.org/documents/2008/03/31/dc-dsp/>
+<http://dublincore.org/documents/2008/11/03/profile-guidelines/>
+
 
 <https://www.jiscmail.ac.uk/cgi-bin/webadmin?A2=ind1004&L=dc-architecture&D=0&P=2072>
 
@@ -6,10 +10,6 @@
 
 Pete Johnson
 <https://www.jiscmail.ac.uk/cgi-bin/webadmin?A2=ind1004&L=dc-architecture&D=0&P=6564>
-
-
-<http://dublincore.org/documents/2008/03/31/dc-dsp/>
-<http://dublincore.org/documents/2008/11/03/profile-guidelines/>
 
 
 e-prints AP (SWAP): <http://www.ukoln.ac.uk/repositories/digirep/index/Eprints_Application_Profile>

@@ -25,82 +25,82 @@
     <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-4-creator-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/publisher'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-6-publisher-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-5-publisher-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-7-date-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-6-date-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/language'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-8-language-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-7-language-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier'])">
-    <statement>Report: Description Element: 1 Description Element contains 2 Statement Elements matching statement template dt-1-st-9-identifier-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 2 Statement Elements matching statement template dt-1-st-8-identifier-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/format'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-10-format-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-9-format-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownBy'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-11-isShownBy-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-10-isShownBy-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://www.europeana.eu/schemas/ese/isShownAt'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-12-isShownAt-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-11-isShownAt-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/subject'])">
-    <statement>Report: Description Element: 1 Description Element contains 2 Statement Elements matching statement template dt-1-st-13-subject-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 2 Statement Elements matching statement template dt-1-st-12-subject-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/description'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-14-description-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-13-description-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/abstract'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-15-abstract-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-14-abstract-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/bibliographicCitation'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-16-bibliographicCitation-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-15-bibliographicCitation-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-17-type-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-16-type-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/rights'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-18-rights-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-17-rights-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/accessRights'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-19-accessRights-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-18-accessRights-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/license'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-20-license-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-19-license-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/reviewStatus'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-21-reviewStatus-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-20-reviewStatus-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/publicationStatus'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-22-publicationStatus-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-21-publicationStatus-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/conformsTo'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-24-conformsTo-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-23-conformsTo-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/references'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-25-references-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-24-references-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isReferencedBy'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-26-isReferencedBy-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-25-isReferencedBy-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasPart'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-27-hasPart-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-26-hasPart-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isPartOf'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-28-isPartOf-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-27-isPartOf-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/hasVersion'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-29-hasVersion-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-28-hasVersion-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/isVersionOf'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-30-isVersionOf-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-29-isVersionOf-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasMetametadata'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-33-hasMetametadata-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-32-hasMetametadata-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/hasResearch'])">
-    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-34-hasResearch-</statement>
+    <statement>Report: Description Element: 1 Description Element contains 1 Statement Elements matching statement template dt-1-st-33-hasResearch-</statement>
   </report>
   <report test="count(dcds:valueString)">
     <statement>Report: Description Element: 1 Statement Element: 8 Statement Element contains 1 Value String Elements</statement>
@@ -118,6 +118,9 @@
     <statement>Report: Description Element: 1 Statement Element: 15 Statement Element contains 1 Value String Elements</statement>
   </report>
   <report test="count(dcds:valueString)">
+    <statement>Report: Description Element: 1 Statement Element: 18 Statement Element contains 1 Value String Elements</statement>
+  </report>
+  <report test="count(dcds:valueString)">
     <statement>Report: Description Element: 1 Statement Element: 19 Statement Element contains 1 Value String Elements</statement>
   </report>
   <report test="count(dcds:valueString)">
@@ -127,10 +130,10 @@
     <statement>Report: Description Element: 1 Statement Element: 24 Statement Element contains 1 Value String Elements</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type'])">
-    <statement>Report: Description Element: 2 Description Element contains 1 Statement Elements matching statement template dt-2-st-1-class-</statement>
+    <statement>Report: Description Element: 2 Description Element contains 1 Statement Elements matching statement template dt-2-st-1-agentClass-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type'])">
-    <statement>Report: Description Element: 2 Description Element contains 1 Statement Elements matching statement template dt-2-st-2-type-</statement>
+    <statement>Report: Description Element: 2 Description Element contains 1 Statement Elements matching statement template dt-2-st-2-agentType-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/firstName'])">
     <statement>Report: Description Element: 2 Description Element contains 1 Statement Elements matching statement template dt-2-st-4-firstName-</statement>
@@ -142,10 +145,10 @@
     <statement>Report: Description Element: 2 Description Element contains 1 Statement Elements matching statement template dt-2-st-6-mbox-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type'])">
-    <statement>Report: Description Element: 3 Description Element contains 1 Statement Elements matching statement template dt-2-st-1-class-</statement>
+    <statement>Report: Description Element: 3 Description Element contains 1 Statement Elements matching statement template dt-2-st-1-agentClass-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type'])">
-    <statement>Report: Description Element: 3 Description Element contains 1 Statement Elements matching statement template dt-2-st-2-type-</statement>
+    <statement>Report: Description Element: 3 Description Element contains 1 Statement Elements matching statement template dt-2-st-2-agentType-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://xmlns.com/foaf/0.1/name'])">
     <statement>Report: Description Element: 3 Description Element contains 1 Statement Elements matching statement template dt-2-st-3-name-</statement>
@@ -154,19 +157,19 @@
     <statement>Report: Description Element: 3 Description Element contains 1 Statement Elements matching statement template dt-2-st-6-mbox-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type'])">
-    <statement>Report: Description Element: 4 Description Element contains 1 Statement Elements matching statement template dt-3-st-1-class-</statement>
+    <statement>Report: Description Element: 4 Description Element contains 1 Statement Elements matching statement template dt-3-st-1-metametadataClass-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/type'])">
-    <statement>Report: Description Element: 4 Description Element contains 1 Statement Elements matching statement template dt-3-st-3-type-</statement>
+    <statement>Report: Description Element: 4 Description Element contains 1 Statement Elements matching statement template dt-3-st-3-metametadataType-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/date'])">
-    <statement>Report: Description Element: 4 Description Element contains 1 Statement Elements matching statement template dt-3-st-4-date-</statement>
+    <statement>Report: Description Element: 4 Description Element contains 1 Statement Elements matching statement template dt-3-st-4-metametadataDate-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/contributor'])">
-    <statement>Report: Description Element: 4 Description Element contains 1 Statement Elements matching statement template dt-3-st-5-contributor-</statement>
+    <statement>Report: Description Element: 4 Description Element contains 1 Statement Elements matching statement template dt-3-st-5-metametadataContributor-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type'])">
-    <statement>Report: Description Element: 5 Description Element contains 1 Statement Elements matching statement template dt-4-st-1-class-</statement>
+    <statement>Report: Description Element: 5 Description Element contains 1 Statement Elements matching statement template dt-4-st-1-researchClass-</statement>
   </report>
   <report test="count(dcds:statement[@dcds:propertyURI='http://voa3r.eu/terms/objectOfInterest'])">
     <statement>Report: Description Element: 5 Description Element contains 1 Statement Elements matching statement template dt-4-st-2-objectOfInterest-</statement>

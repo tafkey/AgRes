@@ -1,360 +1,360 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <DescriptionSetTemplate xmlns="http://dublincore.org/xml/dc-dsp/2008/01/14" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://dublincore.org/xml/dc-dsp/2008/01/14 http://dublincore.org/architecturewiki/DescriptionSetProfile?action=AttachFile&amp;do=get&amp;target=dcmi-dsp.xsd">
 
-  <DescriptionTemplate ID="AgResResource" minOccurs="1" maxOccurs="1" standalone="yes">
+	<DescriptionTemplate ID="AgResResource" minOccurs="1" maxOccurs="1" standalone="yes">
 
 	<!-- +++ new -->
-    <ResourceClass>http://voa3r.eu/class/Resource</ResourceClass>
-    <StatementTemplate ID="class" minOccurs="1" maxOccurs="1" type="nonliteral">
-      <Property>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</Property>
-      <NonLiteralConstraint>
-	    <ValueURIOccurrence>mandatory</ValueURIOccurrence>
-	    <ValueURI>http://voa3r.eu/class/Resource</ValueURI>
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<ResourceClass>http://voa3r.eu/class/Resource</ResourceClass>
+		<StatementTemplate ID="class" minOccurs="1" maxOccurs="1" type="nonliteral">
+			<Property>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</Property>
+			<NonLiteralConstraint>
+			<ValueURIOccurrence>mandatory</ValueURIOccurrence>
+			<ValueURI>http://voa3r.eu/class/Resource</ValueURI>
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
 
-    <StatementTemplate ID="title" minOccurs="1" type="literal">
-      <Property>http://purl.org/dc/terms/title</Property>
-      <LiteralConstraint>
-        <LanguageOccurrence>mandatory</LanguageOccurrence>
-      </LiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="title" minOccurs="1" type="literal">
+			<Property>http://purl.org/dc/terms/title</Property>
+			<LiteralConstraint>
+				<LanguageOccurrence>mandatory</LanguageOccurrence>
+			</LiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="alternative" minOccurs="0" type="literal">
-      <Property>http://purl.org/dc/terms/alternative</Property>
-      <LiteralConstraint>
-        <LanguageOccurrence>mandatory</LanguageOccurrence>
-      </LiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="alternative" minOccurs="0" type="literal">
+			<Property>http://purl.org/dc/terms/alternative</Property>
+			<LiteralConstraint>
+				<LanguageOccurrence>mandatory</LanguageOccurrence>
+			</LiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="creator" minOccurs="0" type='nonliteral'>
-      <Property>http://purl.org/dc/terms/creator</Property>
-      <NonLiteralConstraint descriptionTemplateRef="agent">
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="creator" minOccurs="0" type='nonliteral'>
+			<Property>http://purl.org/dc/terms/creator</Property>
+			<NonLiteralConstraint descriptionTemplateRef="agent">
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="contributor" minOccurs="0" type='nonliteral'>
-     <SubPropertyOf>http://purl.org/dc/terms/contributor</SubPropertyOf>
-     <Property>http://purl.org/dc/terms/contributor</Property>
-      <NonLiteralConstraint descriptionTemplateRef="agent">
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="contributor" minOccurs="0" type='nonliteral'>
+		 <SubPropertyOf>http://purl.org/dc/terms/contributor</SubPropertyOf>
+			<NonLiteralConstraint descriptionTemplateRef="agent">
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
 
-    <StatementTemplate ID="publisher" minOccurs="0" type='nonliteral'>
-      <Property>http://purl.org/dc/terms/publisher</Property>
-      <NonLiteralConstraint descriptionTemplateRef="agent">
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="publisher" minOccurs="0" type='nonliteral'>
+			<Property>http://purl.org/dc/terms/publisher</Property>
+			<NonLiteralConstraint descriptionTemplateRef="agent">
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="date" minOccurs="1" maxOccurs="1" type="literal">
-      <Property>http://purl.org/dc/terms/date</Property>
-      <LiteralConstraint>
-        <SyntaxEncodingScheme>http://purl.org/dc/terms/W3CDTF</SyntaxEncodingScheme>
-      </LiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="date" minOccurs="1" maxOccurs="1" type="literal">
+			<Property>http://purl.org/dc/terms/date</Property>
+			<LiteralConstraint>
+				<SyntaxEncodingScheme>http://purl.org/dc/terms/W3CDTF</SyntaxEncodingScheme>
+			</LiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="language" minOccurs="1" type="nonliteral">
-      <Property>http://purl.org/dc/terms/language</Property>
-      <NonLiteralConstraint>
-        <VocabularyEncodingScheme>http://purl.org/dc/terms/RFC5646</VocabularyEncodingScheme>
-        <ValueStringConstraint minOccurs="1" maxOccurs="1"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="language" minOccurs="1" type="nonliteral">
+			<Property>http://purl.org/dc/terms/language</Property>
+			<NonLiteralConstraint>
+				<VocabularyEncodingScheme>http://purl.org/dc/terms/RFC5646</VocabularyEncodingScheme>
+				<ValueStringConstraint minOccurs="1" maxOccurs="1"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="identifier" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/identifier</Property>
-      <NonLiteralConstraint>
-        <ValueURIOccurrence>optional</ValueURIOccurrence>
-        <ValueStringConstraint minOccurs="0" maxOccurs="1">
-          <SyntaxEncodingSchemeOccurrence>optional</SyntaxEncodingSchemeOccurrence>
-		  <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
-          <SyntaxEncodingScheme>http://purl.org/dc/terms/URI</SyntaxEncodingScheme>
-        </ValueStringConstraint>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="identifier" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/identifier</Property>
+			<NonLiteralConstraint>
+				<ValueURIOccurrence>optional</ValueURIOccurrence>
+				<ValueStringConstraint minOccurs="0" maxOccurs="1">
+					<SyntaxEncodingSchemeOccurrence>optional</SyntaxEncodingSchemeOccurrence>
+					<SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
+					<SyntaxEncodingScheme>http://purl.org/dc/terms/URI</SyntaxEncodingScheme>
+				</ValueStringConstraint>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="format" minOccurs="0" maxOccurs="1" type="nonliteral">
-      <Property>http://purl.org/dc/terms/format</Property>
-      <NonLiteralConstraint>
-        <VocabularyEncodingScheme>http://purl.org/dc/terms/IMT</VocabularyEncodingScheme>
-        <ValueStringConstraint minOccurs="1" maxOccurs="1"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="format" minOccurs="0" maxOccurs="1" type="nonliteral">
+			<Property>http://purl.org/dc/terms/format</Property>
+			<NonLiteralConstraint>
+				<VocabularyEncodingScheme>http://purl.org/dc/terms/IMT</VocabularyEncodingScheme>
+				<ValueStringConstraint minOccurs="1" maxOccurs="1"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="isShownBy" minOccurs="0" maxOccurs="1" type="nonliteral">
-      <Property>http://www.europeana.eu/schemas/ese/isShownBy</Property>
-      <NonLiteralConstraint>
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="isShownBy" minOccurs="0" maxOccurs="1" type="nonliteral">
+			<Property>http://www.europeana.eu/schemas/ese/isShownBy</Property>
+			<NonLiteralConstraint>
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="isShownAt" minOccurs="0" maxOccurs="1" type="nonliteral">
-      <Property>http://www.europeana.eu/schemas/ese/isShownAt</Property>
-      <NonLiteralConstraint>
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="isShownAt" minOccurs="0" maxOccurs="1" type="nonliteral">
+			<Property>http://www.europeana.eu/schemas/ese/isShownAt</Property>
+			<NonLiteralConstraint>
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="subject" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/subject</Property>
-      <NonLiteralConstraint>
-        <ValueURIOccurrence>optional</ValueURIOccurrence>
-        <ValueStringConstraint minOccurs="0" maxOccurs="1">
-          <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
-          <SyntaxEncodingScheme>http://purl.org/dc/terms/URI</SyntaxEncodingScheme>
-        </ValueStringConstraint>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="subject" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/subject</Property>
+			<NonLiteralConstraint>
+				<ValueURIOccurrence>optional</ValueURIOccurrence>
+				<ValueStringConstraint minOccurs="0" maxOccurs="1">
+					<SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
+					<SyntaxEncodingScheme>http://purl.org/dc/terms/URI</SyntaxEncodingScheme>
+				</ValueStringConstraint>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="description" minOccurs="0" type="literal">
-      <Property>http://purl.org/dc/terms/description</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="description" minOccurs="0" type="literal">
+			<Property>http://purl.org/dc/terms/description</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="abstract" minOccurs="0" type="literal">
-      <Property>http://purl.org/dc/terms/abstract</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="abstract" minOccurs="0" type="literal">
+			<Property>http://purl.org/dc/terms/abstract</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="bibliographicCitation" minOccurs="0" maxOccurs="1" type="literal">
-      <Property>http://purl.org/dc/terms/bibliographicCitation</Property>
-      <LiteralConstraint>
-        <ValueURIOccurrence>disallowed</ValueURIOccurrence>
-        <VocabularyEncodingScheme>http://www.openurl.info/registry/</VocabularyEncodingScheme>
-        <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
-      </LiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="bibliographicCitation" minOccurs="0" maxOccurs="1" type="nonliteral">
+			<Property>http://purl.org/dc/terms/bibliographicCitation</Property>
+			<NonLiteralConstraint>
+				<VocabularyEncodingScheme>http://www.openurl.info/registry/</VocabularyEncodingScheme>
+				<ValueStringConstraint>
+					<SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
+				</ValueStringConstraint>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="type" minOccurs="1" maxOccurs="1" type="nonliteral">
-      <Property>http://purl.org/dc/terms/type</Property>
-      <NonLiteralConstraint>
-        <VocabularyEncodingScheme>http://voa3r.eu/terms/ResourceType</VocabularyEncodingScheme>
-        <ValueStringConstraint minOccurs="1" maxOccurs="1"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="type" minOccurs="1" maxOccurs="1" type="nonliteral">
+			<Property>http://purl.org/dc/terms/type</Property>
+			<NonLiteralConstraint>
+				<VocabularyEncodingScheme>http://voa3r.eu/terms/ResourceType</VocabularyEncodingScheme>
+				<ValueStringConstraint minOccurs="1" maxOccurs="1"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="rights" minOccurs="0" type="literal">
-      <Property>http://purl.org/dc/terms/rights</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="rights" minOccurs="0" type="literal">
+			<Property>http://purl.org/dc/terms/rights</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="accessRights" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/accessRights</Property>
-      <NonLiteralConstraint>
-        <VocabularyEncodingScheme>http://purl.org/eprint/accessRights</VocabularyEncodingScheme>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="accessRights" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/accessRights</Property>
+			<NonLiteralConstraint>
+				<VocabularyEncodingScheme>http://purl.org/eprint/accessRights</VocabularyEncodingScheme>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="license" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/license</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="license" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/license</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="reviewStatus" minOccurs="0" maxOccurs="1" type="nonliteral">
-      <Property>http://voa3r.eu/terms/reviewStatus</Property>
-      <NonLiteralConstraint>
-        <VocabularyEncodingScheme>http://voa3r.eu/terms/ReviewStatus</VocabularyEncodingScheme>
-        <ValueStringConstraint minOccurs="1" maxOccurs="1"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="reviewStatus" minOccurs="0" maxOccurs="1" type="nonliteral">
+			<Property>http://voa3r.eu/terms/reviewStatus</Property>
+			<NonLiteralConstraint>
+				<VocabularyEncodingScheme>http://voa3r.eu/terms/ReviewStatus</VocabularyEncodingScheme>
+				<ValueStringConstraint minOccurs="1" maxOccurs="1"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="publicationStatus" minOccurs="0" maxOccurs="1" type="nonliteral">
-      <Property>http://voa3r.eu/terms/publicationStatus</Property>
-      <NonLiteralConstraint>
-        <VocabularyEncodingScheme>http://voa3r.eu/terms/PublicationStatus</VocabularyEncodingScheme>
-        <ValueStringConstraint minOccurs="1" maxOccurs="1"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="publicationStatus" minOccurs="0" maxOccurs="1" type="nonliteral">
+			<Property>http://voa3r.eu/terms/publicationStatus</Property>
+			<NonLiteralConstraint>
+				<VocabularyEncodingScheme>http://voa3r.eu/terms/PublicationStatus</VocabularyEncodingScheme>
+				<ValueStringConstraint minOccurs="1" maxOccurs="1"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="relation" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/relation</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="relation" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/relation</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="conformsTo" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/conformsTo</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="conformsTo" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/conformsTo</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="references" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/references</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="references" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/references</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="isReferencedBy" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/isReferencedBy</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="isReferencedBy" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/isReferencedBy</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="hasPart" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/hasPart</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="hasPart" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/hasPart</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="isPartOf" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/isPartOf</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="isPartOf" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/isPartOf</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="hasVersion" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/hasVersion</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="hasVersion" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/hasVersion</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="isVersionOf" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/isVersionOf</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="isVersionOf" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/isVersionOf</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="hasTranslation" minOccurs="0" type="nonliteral">
-      <Property>http://voa3r.eu/terms/hasTranslation</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="hasTranslation" minOccurs="0" type="nonliteral">
+			<Property>http://voa3r.eu/terms/hasTranslation</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="isTranslationOf" minOccurs="0" type="nonliteral">
-      <Property>http://voa3r.eu/terms/isTranslationOf</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="isTranslationOf" minOccurs="0" type="nonliteral">
+			<Property>http://voa3r.eu/terms/isTranslationOf</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="hasMetametadata" minOccurs="0" type="nonliteral">
-      <Property>http://voa3r.eu/terms/hasMetametadata</Property>
-      <NonLiteralConstraint descriptionTemplateRef="metametadata">
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="hasMetametadata" minOccurs="0" type="nonliteral">
+			<Property>http://voa3r.eu/terms/hasMetametadata</Property>
+			<NonLiteralConstraint descriptionTemplateRef="metametadata">
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-    <StatementTemplate ID="hasResearch" minOccurs="0" type="nonliteral">
-      <Property>http://voa3r.eu/terms/hasResearch</Property>
-      <NonLiteralConstraint descriptionTemplateRef="research">
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="hasResearch" minOccurs="0" type="nonliteral">
+			<Property>http://voa3r.eu/terms/hasResearch</Property>
+			<NonLiteralConstraint descriptionTemplateRef="research">
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-  </DescriptionTemplate>
+	</DescriptionTemplate>
 
-  <DescriptionTemplate ID="agent" standalone="no">
+	<DescriptionTemplate ID="agent" standalone="no">
 
-    <ResourceClass>http://xmlns.com/foaf/0.1/Agent</ResourceClass>
+		<ResourceClass>http://xmlns.com/foaf/0.1/Agent</ResourceClass>
 
-    <StatementTemplate ID="class" minOccurs="1" maxOccurs="1" type="nonliteral">
-      <Property>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</Property>
-      <NonLiteralConstraint>
-	    <ValueURIOccurrence>mandatory</ValueURIOccurrence>
-	    <ValueURI>http://xmlns.com/foaf/0.1/Agent</ValueURI>
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="agentClass" minOccurs="1" maxOccurs="1" type="nonliteral">
+			<Property>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</Property>
+			<NonLiteralConstraint>
+			<ValueURIOccurrence>mandatory</ValueURIOccurrence>
+			<ValueURI>http://xmlns.com/foaf/0.1/Agent</ValueURI>
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
 	<!-- in order to match this line...
-	    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/type" dcds:valueURI="http://xmlns.com/foaf/0.1/Organization" />
+			<dcds:statement dcds:propertyURI="http://purl.org/dc/terms/type" dcds:valueURI="http://xmlns.com/foaf/0.1/Organization" />
 	-->
-    <StatementTemplate ID="type" minOccurs="0" maxOccurs="1" type="nonliteral">
-      <Property>http://purl.org/dc/terms/type</Property>
-      <!-- FIXME: maybe add some rule here for proper types... -->
-    </StatementTemplate>
+		<StatementTemplate ID="agentType" minOccurs="0" maxOccurs="1" type="nonliteral">
+			<Property>http://purl.org/dc/terms/type</Property>
+			<!-- FIXME: maybe add some rule here for proper types... -->
+		</StatementTemplate>
 
-    <StatementTemplate ID="name" minOccurs="0"  type="literal">
-      <Property>http://xmlns.com/foaf/0.1/name</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="name" minOccurs="0"	type="literal">
+			<Property>http://xmlns.com/foaf/0.1/name</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="firstName" minOccurs="0"  type="literal">
-      <Property>http://xmlns.com/foaf/0.1/firstName</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="firstName" minOccurs="0"	type="literal">
+			<Property>http://xmlns.com/foaf/0.1/firstName</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="lastName" minOccurs="0"  type="literal">
-      <Property>http://xmlns.com/foaf/0.1/lastName</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="lastName" minOccurs="0"	type="literal">
+			<Property>http://xmlns.com/foaf/0.1/lastName</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="mbox" minOccurs="0"  type="nonliteral">
-      <Property>http://xmlns.com/foaf/0.1/mbox</Property>
-      <NonLiteralConstraint>
-        <ValueURIOccurrence>mandatory</ValueURIOccurrence>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="mbox" minOccurs="0"	type="nonliteral">
+			<Property>http://xmlns.com/foaf/0.1/mbox</Property>
+			<NonLiteralConstraint>
+				<ValueURIOccurrence>mandatory</ValueURIOccurrence>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
-  </DescriptionTemplate>
+	</DescriptionTemplate>
 
-  <DescriptionTemplate ID="metametadata" standalone="no">
+	<DescriptionTemplate ID="metametadata" standalone="no">
 	<!-- +++ new -->
-    <ResourceClass>http://voa3r.eu/class/MetaMetadata</ResourceClass>
+		<ResourceClass>http://voa3r.eu/class/MetaMetadata</ResourceClass>
 
-    <StatementTemplate ID="class" minOccurs="1" maxOccurs="1" type="nonliteral">
-      <Property>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</Property>
-      <NonLiteralConstraint>
-	    <ValueURIOccurrence>mandatory</ValueURIOccurrence>
-	    <ValueURI>http://voa3r.eu/class/MetaMetadata</ValueURI>
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
-
-
-    <StatementTemplate ID="identifier" minOccurs="0" type="nonliteral">
-      <Property>http://purl.org/dc/terms/identifier</Property>
-    </StatementTemplate>
-
-    <StatementTemplate ID="type" minOccurs="1" maxOccurs="1" type="nonliteral">
-      <Property>http://purl.org/dc/terms/type</Property>
-    </StatementTemplate>
-
-    <StatementTemplate ID="date" minOccurs="1" maxOccurs="1" type="literal">
-      <Property>http://purl.org/dc/terms/date</Property>
-      <LiteralConstraint>
-        <SyntaxEncodingScheme>http://purl.org/dc/terms/W3CDTF</SyntaxEncodingScheme>
-      </LiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="metametadataClass" minOccurs="1" maxOccurs="1" type="nonliteral">
+			<Property>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</Property>
+			<NonLiteralConstraint>
+			<ValueURIOccurrence>mandatory</ValueURIOccurrence>
+			<ValueURI>http://voa3r.eu/class/MetaMetadata</ValueURI>
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
 
-    <StatementTemplate ID="contributor" minOccurs="1" type='nonliteral'>
-      <Property>http://purl.org/dc/terms/contributor</Property>
-      <NonLiteralConstraint descriptionTemplateRef="agent">
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="metametadataIdentifier" minOccurs="0" type="nonliteral">
+			<Property>http://purl.org/dc/terms/identifier</Property>
+		</StatementTemplate>
 
-  </DescriptionTemplate>
+		<StatementTemplate ID="metametadataType" minOccurs="1" maxOccurs="1" type="nonliteral">
+			<Property>http://purl.org/dc/terms/type</Property>
+		</StatementTemplate>
 
-  <DescriptionTemplate ID="research" standalone="no">
+		<StatementTemplate ID="metametadataDate" minOccurs="1" maxOccurs="1" type="literal">
+			<Property>http://purl.org/dc/terms/date</Property>
+			<LiteralConstraint>
+				<SyntaxEncodingScheme>http://purl.org/dc/terms/W3CDTF</SyntaxEncodingScheme>
+			</LiteralConstraint>
+		</StatementTemplate>
+
+
+		<StatementTemplate ID="metametadataContributor" minOccurs="1" type='nonliteral'>
+			<Property>http://purl.org/dc/terms/contributor</Property>
+			<NonLiteralConstraint descriptionTemplateRef="agent">
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
+
+	</DescriptionTemplate>
+
+	<DescriptionTemplate ID="research" standalone="no">
  	<!-- +++ new -->
-    <ResourceClass>http://voa3r.eu/class/Research</ResourceClass>
+		<ResourceClass>http://voa3r.eu/class/Research</ResourceClass>
 
-    <StatementTemplate ID="class" minOccurs="1" maxOccurs="1" type="nonliteral">
-      <Property>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</Property>
-      <NonLiteralConstraint>
-	    <ValueURIOccurrence>mandatory</ValueURIOccurrence>
-	    <ValueURI>http://voa3r.eu/class/Research</ValueURI>
-        <VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
-        <ValueStringConstraint maxOccurs="0"/>
-      </NonLiteralConstraint>
-    </StatementTemplate>
+		<StatementTemplate ID="researchClass" minOccurs="1" maxOccurs="1" type="nonliteral">
+			<Property>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</Property>
+			<NonLiteralConstraint>
+			<ValueURIOccurrence>mandatory</ValueURIOccurrence>
+			<ValueURI>http://voa3r.eu/class/Research</ValueURI>
+				<VocabularyEncodingSchemeOccurrence>disallowed</VocabularyEncodingSchemeOccurrence>
+				<ValueStringConstraint maxOccurs="0"/>
+			</NonLiteralConstraint>
+		</StatementTemplate>
 
 
-    <StatementTemplate ID="objectOfInterest" minOccurs="0" type="nonliteral">
-      <Property>http://voa3r.eu/terms/objectOfInterest</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="objectOfInterest" minOccurs="0" type="nonliteral">
+			<Property>http://voa3r.eu/terms/objectOfInterest</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="measuresVariable" minOccurs="0" type="nonliteral">
-      <Property>http://voa3r.eu/terms/measuresVariable</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="measuresVariable" minOccurs="0" type="nonliteral">
+			<Property>http://voa3r.eu/terms/measuresVariable</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="usesMethod" minOccurs="0" type="nonliteral">
-      <Property>http://voa3r.eu/terms/usesMethod</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="usesMethod" minOccurs="0" type="nonliteral">
+			<Property>http://voa3r.eu/terms/usesMethod</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="usesProtocol" minOccurs="0" type="nonliteral">
-      <Property>http://voa3r.eu/terms/usesProtocol</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="usesProtocol" minOccurs="0" type="nonliteral">
+			<Property>http://voa3r.eu/terms/usesProtocol</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="usesInstrument" minOccurs="0" type="nonliteral">
-      <Property>http://voa3r.eu/terms/usesInstrument</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="usesInstrument" minOccurs="0" type="nonliteral">
+			<Property>http://voa3r.eu/terms/usesInstrument</Property>
+		</StatementTemplate>
 
-    <StatementTemplate ID="usesTechnique" minOccurs="0" type="nonliteral">
-      <Property>http://voa3r.eu/terms/usesTechnique</Property>
-    </StatementTemplate>
+		<StatementTemplate ID="usesTechnique" minOccurs="0" type="nonliteral">
+			<Property>http://voa3r.eu/terms/usesTechnique</Property>
+		</StatementTemplate>
 
-  </DescriptionTemplate>
+	</DescriptionTemplate>
 
 </DescriptionSetTemplate>

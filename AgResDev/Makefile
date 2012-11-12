@@ -11,6 +11,7 @@ RULES=NEW-level4-schematron-rules.xml
 ISORULES=NEW-level4-schematron-iso-rules.xml
 DSP2SCHEMATRON=dsp2sch-dcds.xsl
 ISO=iso-schematron.xsl
+DSPXSD=../AgRes/dcmi-dsp-DC.xsd
 
 TEMPREPORT=test-report.tmp
 TESTREPORT=test-report.xml
@@ -45,5 +46,19 @@ test:
 	@rm ${TEMPREPORT}
 	@ls -al ${TESTREPORT}
 	@echo "Report saved in ${TESTREPORT}. `grep -c Error ${TESTREPORT}` errors found!"
+
+install:
+	@echo "\n${HR}"
+	@echo "Releasing dev files (NEW*) to ../AgRes folder (VOA3R*)"
+	@echo "${HR}\n"
+	cp -i NEW-level4-dsp.xml ../AgRes/VOA3R-level4-dsp.xml
+	cp -i NEW-level4-example.xml ../AgRes/VOA3R-level4-example.xml
+	cp -i NEW-level4-schematron-rules.xml ../AgRes/VOA3R-level4-schematron-rules.xml
+	@ls -al NEW-level4-dsp.xml NEW-level4-example.xml NEW-level4-schematron-rules.xml
+	@ls -al ../AgRes/VOA3R-level4-*
+
+	@echo "All done!"
+	
+
 
 all: rules isorules test
