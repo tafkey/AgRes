@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://dublincore.org/xml/dc-dsp/2008/01/14" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://dublincore.org/xml/dc-dsp/2008/01/14" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:element name="DescriptionSetTemplate">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="DescriptionTemplate" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="ResourceClass" type="xsd:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:element name="StatementTemplate" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:choice>
+											<xsd:element name="Property" type="xsd:anyURI" maxOccurs="unbounded"/>
+											<xsd:element name="SubPropertyOf" type="xsd:anyURI"/>
+										</xsd:choice>
+										<xsd:choice minOccurs="0">
+											<xsd:element name="NonLiteralConstraint">
+												<xsd:complexType>
+													<xsd:sequence>
+														<xsd:element name="ValueClass" type="xsd:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+														<xsd:element name="ValueURIOccurrence" type="Occurrence" minOccurs="0"/>
+														<xsd:element name="ValueURI" type="xsd:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+														<xsd:element name="VocabularyEncodingSchemeOccurrence" type="Occurrence" minOccurs="0"/>
+														<xsd:element name="VocabularyEncodingSchemeURI" type="xsd:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+														<xsd:element name="ValueStringConstraint" minOccurs="0" maxOccurs="unbounded">
+															<xsd:complexType>
+																<xsd:complexContent>
+																	<xsd:extension base="LiteralConstraintType">
+																		<xsd:attributeGroup ref="MinMaxGroup"/>
+																	</xsd:extension>
+																</xsd:complexContent>
+															</xsd:complexType>
+														</xsd:element>
+													</xsd:sequence>
+													<xsd:attribute name="descriptionTemplateRef" type="xsd:IDREF"/>
+												</xsd:complexType>
+											</xsd:element>
+											<xsd:element name="LiteralConstraint" type="LiteralConstraintType"/>
+										</xsd:choice>
+									</xsd:sequence>
+									<xsd:attributeGroup ref="MinMaxGroup"/>
+									<xsd:attribute name="ID" type="xsd:string"/>
+									<xsd:attribute name="type">
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:enumeration value="literal"/>
+												<xsd:enumeration value="nonliteral"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:attribute>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="ID" type="xsd:ID"/>
+						<xsd:attributeGroup ref="MinMaxGroup"/>
+						<xsd:attribute name="standalone" type="Standalone"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="LiteralConstraintType">
+		<xsd:choice>
+			<xsd:element name="LiteralOption" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="lang" type="xsd:language"/>
+							<xsd:attribute name="SES" type="xsd:anyURI"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:sequence>
+				<xsd:element name="LanguageOccurrence" type="Occurrence" minOccurs="0"/>
+				<xsd:element name="Language" type="xsd:language" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="SyntaxEncodingSchemeOccurrence" type="Occurrence" minOccurs="0"/>
+				<xsd:element name="SyntaxEncodingScheme" type="xsd:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:attributeGroup name="MinMaxGroup">
+		<xsd:attribute name="minOccurs" type="xsd:nonNegativeInteger"/>
+		<xsd:attribute name="maxOccurs" type="xsd:nonNegativeInteger"/>
+	</xsd:attributeGroup>
+	<xsd:simpleType name="Occurrence">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="disallowed"/>
+			<xsd:enumeration value="optional"/>
+			<xsd:enumeration value="mandatory"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Standalone">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="yes"/>
+			<xsd:enumeration value="no"/>
+			<xsd:enumeration value="both"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>
