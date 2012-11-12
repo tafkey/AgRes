@@ -585,7 +585,9 @@
 			</xsl:variable>
 						
 			<xsl:element name="iso:assert">
-				<xsl:attribute name="test"><xsl:value-of select="$sesURICompare" /></xsl:attribute>
+				<!-- ++++ FIXME: check this out... tasos: added to avoid false Errors by empty Statements (Withoug ValueString) -->
+				<!-- <xsl:attribute name="test"><xsl:value-of select="$sesURICompare" /></xsl:attribute>-->
+				<xsl:attribute name="test">((@dcds:valueURI) or (<xsl:value-of select="$sesURICompare" />))</xsl:attribute>
 				<xsl:text>Error:</xsl:text>
 				<xsl:call-template name="makeDescStmtPosition" />
 				<xsl:text> SES URI must be from list specified by statement template </xsl:text>

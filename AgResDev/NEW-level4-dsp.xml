@@ -76,8 +76,8 @@
       <NonLiteralConstraint>
         <ValueURIOccurrence>optional</ValueURIOccurrence>
         <ValueStringConstraint minOccurs="0" maxOccurs="1">
+          <SyntaxEncodingSchemeOccurrence>optional</SyntaxEncodingSchemeOccurrence>      
 		  <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
-          <SyntaxEncodingScheme>http://purl.org/dc/terms/URI</SyntaxEncodingScheme>
 		</ValueStringConstraint>
       </NonLiteralConstraint>
     </StatementTemplate>
@@ -109,10 +109,9 @@
     <StatementTemplate ID="subject" minOccurs="0" type="nonliteral">
       <Property>http://purl.org/dc/terms/subject</Property> 
       <NonLiteralConstraint>
-        <ValueURIOccurrence>optional</ValueURIOccurrence>   
+        <ValueURIOccurrence>optional</ValueURIOccurrence>      
         <ValueStringConstraint minOccurs="0" maxOccurs="1">
           <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
-          <SyntaxEncodingScheme>http://purl.org/dc/terms/URI</SyntaxEncodingScheme>
         </ValueStringConstraint>
       </NonLiteralConstraint>
     </StatementTemplate>
