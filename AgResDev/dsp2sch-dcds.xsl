@@ -857,7 +857,11 @@
 
 		<xsl:call-template name="processLiteralConstraint">
 			<xsl:with-param name="literalConstraint" select="." />
+			<!-- is this capital "V" the error ??????? -->
+<!--
 			<xsl:with-param name="element" select="'dcds:ValueString'" />
+-->
+			<xsl:with-param name="element" select="'dcds:valueString'" />
 			<xsl:with-param name="st-id" select="$st-id" />
 		</xsl:call-template>
 

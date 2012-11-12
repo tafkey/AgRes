@@ -143,6 +143,16 @@
       <iso:assert test="count(dcds:valueString) &lt;= 1">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-8-language- exceeded. Present: <iso:value-of select="count(dcds:valueString)"/> Maximum permitted: 1</iso:assert>
     </iso:rule>
   </iso:pattern>
+  <iso:pattern id="dt-1-stp-9-identifier-nonlit">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/identifier']">
+      <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-9-identifier-</iso:assert>
+      <iso:let name="valueURI" value="@dcds:valueURI"/>
+      <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-9-identifier-</iso:report>
+      <iso:report test="count(dcds:valueString)">Report: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Statement Element contains <iso:value-of select="count(dcds:valueString)"/> Value String Elements</iso:report>
+      <iso:assert test="count(dcds:valueString) &lt;= 1">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-9-identifier- exceeded. Present: <iso:value-of select="count(dcds:valueString)"/> Maximum permitted: 1</iso:assert>
+      <iso:assert test="(dcds:valueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema') or (dcds:valueString/@dcds:sesURI = 'http://purl.org/dc/terms/URI')">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> SES URI must be from list specified by statement template dt-1-stp-9-identifier-</iso:assert>
+    </iso:rule>
+  </iso:pattern>
   <iso:pattern id="dt-1-stp-10-format-nonlit">
     <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/format']">
       <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-10-format-</iso:assert>
@@ -174,6 +184,16 @@
       <iso:assert test="count(dcds:valueString) &lt;= 0">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-12-isShownAt- exceeded. Present: <iso:value-of select="count(dcds:valueString)"/> Maximum permitted: 0</iso:assert>
     </iso:rule>
   </iso:pattern>
+  <iso:pattern id="dt-1-stp-13-subject-nonlit">
+    <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/subject']">
+      <iso:assert test="not(@dcds:valueRef)">Error: DescriptionTemplateRef not specified, so a valueRef attribute value must not be present.dt-1-stp-13-subject-</iso:assert>
+      <iso:let name="valueURI" value="@dcds:valueURI"/>
+      <iso:report test="@dcds:valueURI and /dcds:descriptionSet/dcds:description[@dcds:resourceURI = $valueURI]">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-13-subject-</iso:report>
+      <iso:report test="count(dcds:valueString)">Report: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Statement Element contains <iso:value-of select="count(dcds:valueString)"/> Value String Elements</iso:report>
+      <iso:assert test="count(dcds:valueString) &lt;= 1">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Maximum number of Value String Elements matching statement template dt-1-stp-13-subject- exceeded. Present: <iso:value-of select="count(dcds:valueString)"/> Maximum permitted: 1</iso:assert>
+      <iso:assert test="(dcds:valueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema') or (dcds:valueString/@dcds:sesURI = 'http://purl.org/dc/terms/URI')">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> SES URI must be from list specified by statement template dt-1-stp-13-subject-</iso:assert>
+    </iso:rule>
+  </iso:pattern>
   <iso:pattern id="dt-1-stp-14-description-lit">
     <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/description']">
       <iso:assert test="dcds:literalValueString">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-14-description-</iso:assert>
@@ -187,6 +207,7 @@
   <iso:pattern id="dt-1-stp-16-bibliographicCitation-lit">
     <iso:rule context="dcds:description[dcds:statement[@dcds:propertyURI='http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and (@dcds:valueURI='http://voa3r.eu/class/Resource')]]/dcds:statement[@dcds:propertyURI='http://purl.org/dc/terms/bibliographicCitation']">
       <iso:assert test="dcds:literalValueString">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> Literal Value String element required by statement template dt-1-stp-16-bibliographicCitation-</iso:assert>
+      <iso:assert test="(dcds:literalValueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema')">Error: Description Element: <iso:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <iso:value-of select="1 + count(preceding-sibling::dcds:statement)"/> SES URI must be from list specified by statement template dt-1-stp-16-bibliographicCitation-</iso:assert>
     </iso:rule>
   </iso:pattern>
   <iso:pattern id="dt-1-stp-17-type-nonlit">

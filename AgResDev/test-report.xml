@@ -106,7 +106,19 @@
     <statement>Report: Description Element: 1 Statement Element: 8 Statement Element contains 1 Value String Elements</statement>
   </report>
   <report test="count(dcds:valueString)">
+    <statement>Report: Description Element: 1 Statement Element: 9 Statement Element contains 1 Value String Elements</statement>
+  </report>
+  <report test="count(dcds:valueString)">
+    <statement>Report: Description Element: 1 Statement Element: 10 Statement Element contains 1 Value String Elements</statement>
+  </report>
+  <report test="count(dcds:valueString)">
     <statement>Report: Description Element: 1 Statement Element: 11 Statement Element contains 1 Value String Elements</statement>
+  </report>
+  <report test="count(dcds:valueString)">
+    <statement>Report: Description Element: 1 Statement Element: 14 Statement Element contains 1 Value String Elements</statement>
+  </report>
+  <report test="count(dcds:valueString)">
+    <statement>Report: Description Element: 1 Statement Element: 15 Statement Element contains 1 Value String Elements</statement>
   </report>
   <report test="count(dcds:valueString)">
     <statement>Report: Description Element: 1 Statement Element: 19 Statement Element contains 1 Value String Elements</statement>

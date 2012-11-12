@@ -1,3 +1,4 @@
+<http://dublincore.org/documents/dc-ds-xml/>
 
 <https://www.jiscmail.ac.uk/cgi-bin/webadmin?A2=ind1004&L=dc-architecture&D=0&P=2072>
 
@@ -13,6 +14,27 @@ Pete Johnson
 
 e-prints AP (SWAP): <http://www.ukoln.ac.uk/repositories/digirep/index/Eprints_Application_Profile>
 and <http://dublincore.org/scholarwiki/SWAPDSP?action=DSP2XML>
+
+ISB DSP: <http://wiki.dublincore.org/index.php/DCAM_Revision_Design_Patterns>
+
+
+??? Is it possible to **overload** a property??? Probably **not!**
+<<https://www.jiscmail.ac.uk/cgi-bin/webadmin?A2=ind0809&L=dc-rda&D=0&P=8289>>
+
+<http://dublincore.org/architecturewiki/DcamInContext>
+
+Work in progress: <http://dublincore.org/architecturewiki/DCAM-2.0>
+
+
+### Difference between literal and non-literal values
+<http://dublincore.org/documents/2008/11/03/profile-guidelines/#appc>
+... "Properties with anything other than a "literal" range are said to have a "non-literal" range. Examples of properties with a "non-literal" range include dcterms:license, with the range dcterms:LicenseDocument, and foaf:holdsAccount, with the range foaf:OnlineAccount. Where literal-range properties may be simpler to process, non-literal-range properties are more flexible and extensible. In descriptive metadata, literal values constitutes "terminals" (in the sense of "end point"); the value string "Mary Jones" cannot itself be the starting point for any further description of the person Mary Jones. A non-literal value, in contrast, has hooks to which one may attach any number of additional pieces of information about the person Mary Jones, such as her email address, institutional affiliation, and date of birth. Potentially, non-literal values can be represented by any combination of the following:"
+* A plain or typed value string (Value String in the DCMI Abstract Model) -- and not just one, but potentially several in parallel, as in the case of a title rendered in English, French, and Japanese.
+* A URI identifying the value resource (Value URI).
+* A URI identifying an enumerated set (or controlled vocabulary) of which the value is a member (Vocabulary Encoding Scheme URI).
+
+
+
 
 ### EXAMPLE 
 

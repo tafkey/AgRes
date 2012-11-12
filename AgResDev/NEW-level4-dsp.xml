@@ -71,15 +71,13 @@
       </NonLiteralConstraint>
     </StatementTemplate>
 
-    <StatementTemplate ID="identifier" minOccurs="0">
+    <StatementTemplate ID="identifier" minOccurs="0" type="nonliteral">
       <Property>http://purl.org/dc/terms/identifier</Property>
-      <LiteralConstraint>
-        <ValueURIOccurrence>mandatory</ValueURIOccurrence>      
-      </LiteralConstraint>
       <NonLiteralConstraint>
-        <ValueURIOccurrence>dissalowed</ValueURIOccurrence>      
+        <ValueURIOccurrence>optional</ValueURIOccurrence>
         <ValueStringConstraint minOccurs="0" maxOccurs="1">
 		  <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
+          <SyntaxEncodingScheme>http://purl.org/dc/terms/URI</SyntaxEncodingScheme>
 		</ValueStringConstraint>
       </NonLiteralConstraint>
     </StatementTemplate>
@@ -108,15 +106,13 @@
       </NonLiteralConstraint>
     </StatementTemplate>
 
-    <StatementTemplate ID="subject" minOccurs="0">
+    <StatementTemplate ID="subject" minOccurs="0" type="nonliteral">
       <Property>http://purl.org/dc/terms/subject</Property> 
-      <LiteralConstraint>
-        <ValueURIOccurrence>mandatory</ValueURIOccurrence>      
-      </LiteralConstraint>
       <NonLiteralConstraint>
-        <ValueURIOccurrence>dissalowed</ValueURIOccurrence>      
+        <ValueURIOccurrence>optional</ValueURIOccurrence>   
         <ValueStringConstraint minOccurs="0" maxOccurs="1">
           <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
+          <SyntaxEncodingScheme>http://purl.org/dc/terms/URI</SyntaxEncodingScheme>
         </ValueStringConstraint>
       </NonLiteralConstraint>
     </StatementTemplate>
@@ -131,13 +127,11 @@
 
     <StatementTemplate ID="bibliographicCitation" minOccurs="0" maxOccurs="1" type="literal">
       <Property>http://purl.org/dc/terms/bibliographicCitation</Property>      
-      <NonLiteralConstraint>
+      <LiteralConstraint>
         <ValueURIOccurrence>disallowed</ValueURIOccurrence>
         <VocabularyEncodingScheme>http://www.openurl.info/registry/</VocabularyEncodingScheme>
-        <LiteralValueStringConstraint minOccurs="1" maxOccurs="1">
-          <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
-        </LiteralValueStringConstraint>
-      </NonLiteralConstraint>
+        <SyntaxEncodingScheme>http://voa3r.eu/terms/EncodedSchema</SyntaxEncodingScheme>
+      </LiteralConstraint>
     </StatementTemplate>
 
     <StatementTemplate ID="type" minOccurs="1" maxOccurs="1" type="nonliteral">
@@ -240,6 +234,7 @@
   <DescriptionTemplate ID="agent" standalone="no">
 
     <ResourceClass>http://xmlns.com/foaf/0.1/Agent</ResourceClass>
+    
     <StatementTemplate ID="class" minOccurs="1" maxOccurs="1" type="nonliteral">
       <Property>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</Property>      
       <NonLiteralConstraint>
@@ -282,6 +277,7 @@
   <DescriptionTemplate ID="metametadata" standalone="no">
 	<!-- +++ new -->
     <ResourceClass>http://voa3r.eu/class/MetaMetadata</ResourceClass>
+    
     <StatementTemplate ID="class" minOccurs="1" maxOccurs="1" type="nonliteral">
       <Property>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</Property>      
       <NonLiteralConstraint>
@@ -321,7 +317,8 @@
 
   <DescriptionTemplate ID="research" standalone="no">
  	<!-- +++ new -->
-   <ResourceClass>http://voa3r.eu/class/Research</ResourceClass>
+    <ResourceClass>http://voa3r.eu/class/Research</ResourceClass>
+   
     <StatementTemplate ID="class" minOccurs="1" maxOccurs="1" type="nonliteral">
       <Property>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</Property>      
       <NonLiteralConstraint>
@@ -356,7 +353,6 @@
     <StatementTemplate ID="usesTechnique" minOccurs="0" type="nonliteral">
       <Property>http://voa3r.eu/terms/usesTechnique</Property>      
     </StatementTemplate>
-
 
   </DescriptionTemplate>
 
