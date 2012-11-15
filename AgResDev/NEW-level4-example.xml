@@ -48,7 +48,6 @@
 
  	<!-- element 9 -->
     <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/identifier" 
-        dcds:sesURI="http://purl.org/dc/terms/URI" 
         dcds:valueURI="http://voa3r.eu/documents/553/" />
 
     <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/identifier">

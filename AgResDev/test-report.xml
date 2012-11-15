@@ -108,6 +108,9 @@
   <report test="count(dcds:valueString)">
     <statement>Report: Description Element: 1 Statement Element: 10 Statement Element contains 1 Value String Elements</statement>
   </report>
+  <failed-assertion test="((@dcds:valueURI) or ((dcds:valueString/@dcds:sesURI = 'http://voa3r.eu/terms/EncodedSchema') or (dcds:valueString/@dcds:sesURI = 'http://purl.org/dc/terms/URI')))">
+    <statement>Error: Description Element: 1 Statement Element: 10 SES URI must be from list specified by statement template dt-1-stp-9-identifier-</statement>
+  </failed-assertion>
   <report test="count(dcds:valueString)">
     <statement>Report: Description Element: 1 Statement Element: 11 Statement Element contains 1 Value String Elements</statement>
   </report>
