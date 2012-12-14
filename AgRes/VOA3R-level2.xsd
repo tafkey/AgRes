@@ -262,7 +262,16 @@
 
 <!-- Vocabularies -->
 
-
+<xs:complexType name="RFC5646">
+  <xs:simpleContent>
+    <xs:restriction base="dc:SimpleLiteral">
+      <xs:simpleType>
+        <xs:restriction base="xs:language"/>
+      </xs:simpleType>
+      <xs:attribute ref="xml:lang" use="prohibited"/>
+    </xs:restriction>
+  </xs:simpleContent>
+</xs:complexType>
 
 <xs:complexType name="ReviewStatus">
   <xs:annotation>
