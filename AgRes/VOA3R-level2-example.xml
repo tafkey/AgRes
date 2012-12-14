@@ -53,7 +53,7 @@
     2001-07-18
   </dcterms:date>
 
-  <dcterms:language xsi:type="dcterms:RFC5646">
+  <dcterms:language xsi:type="voa3r:RFC5646">
     en
   </dcterms:language>
 
