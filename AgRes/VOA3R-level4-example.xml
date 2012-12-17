@@ -42,7 +42,7 @@
       <dcds:literalValueString dcds:sesURI="http://purl.org/dc/terms/W3CDTF">2001-07-18</dcds:literalValueString>
     </dcds:statement>
 
-    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/language" dcds:vesURI="http://purl.org/dc/terms/RFC5646" dcds:valueURI="http://purl.org/dc/terms/RFC5646">
+    <dcds:statement dcds:propertyURI="http://purl.org/dc/terms/language" dcds:vesURI="http://voa3r.eu/terms/RFC5646" dcds:valueURI="http://voa3r.eu/terms/RFC5646">
       <dcds:valueString>en</dcds:valueString>
     </dcds:statement>
 

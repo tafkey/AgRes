@@ -51,10 +51,6 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attr
     														minOccurs="0">
     													</xsd:element>
     													<xsd:element
-<!--
-+++ Tasos: need to change this, it doesn't follw the spec!
-    														name="VocabularyEncodingSchemeURI" type="xsd:anyURI"
--->
     														name="VocabularyEncodingScheme" type="xsd:anyURI"
     														maxOccurs="unbounded" minOccurs="0">
     													</xsd:element>

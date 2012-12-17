@@ -1,0 +1,184 @@
+<!--
+<record>
+  <header>
+    <identifier>oai:prodinra.inra.fr:203847</identifier>
+    <datestamp>2012-05-31T00:00:00Z</datestamp>
+  </header>
+<?xml version="1.0"?>
+-->
+<resource xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:dcterms="http://purl.org/dc/terms/"
+          xmlns:voa3r="http://www.voa3r.eu/terms/"
+          xmlns:ese="http://www.europeana.eu/schemas/ese/"
+          xmlns:marcrel="http://www.loc.gov/marc.relators/"
+          xmlns="http://www.voa3r.eu/terms/" >
+
+<!--
+  <metadata>
+-->
+<!--
+    <dcterms:VOA3R xsi:schemaLocation="http://www.ieru.org/voa3r/AP/VOA3R-level2.xsd">
+-->
+      <dcterms:title xml:lang="en">Effect of ectopic expression of the eutypine detoxifying gene Vr-ERE in transgenic apple plants</dcterms:title>
+      <dcterms:creator>
+        vcard:BEGIN:VCARD
+        VERSION:4.0
+        N:Chevreau;Elisabeth;;;
+        FN:ElisabethChevreau
+        ORG:Institut National de la Recherche Agronomique;UMR 1259 UMR INRA / INH / Univ. Angers : Génétique et Horticulture, BEAUCOUZE CEDEX. France
+        EMAIL:Elisabeth.Chevreau@angers.inra.fr
+        END:VCARD
+      </dcterms:creator>
+      <dcterms:creator>
+        vcard:BEGIN:VCARD
+        VERSION:4.0
+        N:Dupuis;Fabrice;;;
+        FN:FabriceDupuis
+        ORG:Institut National de la Recherche Agronomique;UMR 1259 UMR INRA / INH / Univ. Angers : Génétique et Horticulture, BEAUCOUZE CEDEX. France
+        EMAIL:Fabrice.Dupuis@angers.inra.fr
+        END:VCARD
+      </dcterms:creator>
+      <dcterms:creator>
+        vcard:BEGIN:VCARD
+        VERSION:4.0
+        N:Taglioni;Jean-Paul;;;
+        FN:Jean-PaulTaglioni
+        ORG:Institut National de la Recherche Agronomique;UMR 1259 UMR INRA / INH / Univ. Angers : Génétique et Horticulture, BEAUCOUZE CEDEX. France
+        EMAIL:Jean-Paul.Taglioni@angers.inra.fr
+        END:VCARD
+      </dcterms:creator>
+      <dcterms:creator>
+        vcard:BEGIN:VCARD
+        VERSION:4.0
+        N:Sourice;Sophie;;;
+        FN:SophieSourice
+        ORG:Institut National de la Recherche Agronomique;UMR 1259 UMR INRA / INH / Univ. Angers : Génétique et Horticulture, BEAUCOUZE CEDEX. France
+        EMAIL:Sophie.Sourice@angers.inra.fr
+        END:VCARD
+      </dcterms:creator>
+      <dcterms:creator>
+        vcard:BEGIN:VCARD
+        VERSION:4.0
+        N:Cournol;Raphael;;;
+        FN:RaphaelCournol
+        ORG:Institut National de la Recherche Agronomique;UMR 1259 UMR INRA / INH / Univ. Angers : Génétique et Horticulture, BEAUCOUZE CEDEX. France
+        EMAIL:Raphael.Cournol@angers.inra.fr
+        END:VCARD
+      </dcterms:creator>
+      <dcterms:creator>
+        vcard:BEGIN:VCARD
+        VERSION:4.0
+        N:Deswartes;C.;;;
+        FN:Deswartes\,C.
+        ORG:Institut National de la Recherche Agronomique;UMR 1259 UMR INRA / INH / Univ. Angers : Génétique et Horticulture, BEAUCOUZE CEDEX. France
+        END:VCARD
+      </dcterms:creator>
+      <dcterms:creator>
+        vcard:BEGIN:VCARD
+        VERSION:4.0
+        N:Bersegeay;A.;;;
+        FN:Bersegeay\,A.
+        ORG:Institut National de la Recherche Agronomique;UMR 1259 UMR INRA / INH / Univ. Angers : Génétique et Horticulture, BEAUCOUZE CEDEX. France
+        END:VCARD
+      </dcterms:creator>
+      <dcterms:creator>
+        vcard:BEGIN:VCARD
+        VERSION:4.0
+        N:Descombin;Julie;;;
+        FN:JulieDescombin
+        ORG:Institut National de la Recherche Agronomique;UMR 1259 UMR INRA / INH / Univ. Angers : Génétique et Horticulture, BEAUCOUZE CEDEX. France
+        END:VCARD
+      </dcterms:creator>
+      <dcterms:creator>
+        vcard:BEGIN:VCARD
+        VERSION:4.0
+        N:Siegwart;Myriam;;;
+        FN:MyriamSiegwart
+        ORG:Institut National de la Recherche Agronomique;UMR 1259 UMR INRA / INH / Univ. Angers : Génétique et Horticulture, BEAUCOUZE CEDEX. France
+        EMAIL:myriam.siegwart@avignon.inra.fr
+        END:VCARD
+      </dcterms:creator>
+      <dcterms:creator>
+        vcard:BEGIN:VCARD
+        VERSION:4.0
+        N:Loridon;Karine;;;
+        FN:KarineLoridon
+        ORG:Institut National de la Recherche Agronomique;UMR 1334 UMR INRA / CIRAD / MontpellierSupAgro / Univ. Montpellier 2 : Amélioration Génétique et Adaptation des Plantes méditerranéennes et Tropicales, MONTPELLIER CEDEX 1. France
+        EMAIL:karine.loridon@supagro.inra.fr
+        END:VCARD
+      </dcterms:creator>
+      <dcterms:date xsi:type="dcterms:W3CDTF">2011</dcterms:date>
+<!--
+      <dcterms:language xsi:type="dcterms:RFC5646">en</dcterms:language>
+      FIXME: maybe we should change the XSD to allow for the previous to validate...
+-->
+      <dcterms:language>en</dcterms:language>
+<!--
+      <dcterms:identifier xsi:type="info:DOI">10.1007/s11240-010-9904-4</dcterms:identifier>
+      FIXME: maybe this requires also for a change to the XSD...
+-->
+      <dcterms:identifier >10.1007/s11240-010-9904-4</dcterms:identifier>
+<!--
+      <dcterms:format xsi:type="dcterm.IMT">application/octet-stream</dcterms:format>
+      FIXME: maybe this requires also for a change to the XSD...
+-->
+      <dcterms:format>application/octet-stream</dcterms:format>
+      <ese:isShownBy>http://prodinra2-integration.jouy.inra.fr/ft/BBD7951D-72D0-4CA1-B226-4016E6225A27</ese:isShownBy>
+      <ese:isShownAt>http://prodinra2-integration.jouy.inra.fr/record/203847</ese:isShownAt>
+      <dcterms:subject>EUTYPA LATA;ALDEHYDE REDUCTASE;APPLE;EUTYPINE;GENETIC ENGINEERING</dcterms:subject>
+      <dcterms:subject xml:lang="fr">malus domestica</dcterms:subject>
+      <dcterms:subject xml:lang="fr">pommier</dcterms:subject>
+      <dcterms:subject xml:lang="en">apple tree</dcterms:subject>
+      <dcterms:subject xml:lang="fr">arbre fruitier</dcterms:subject>
+      <dcterms:subject xml:lang="en">fruit tree</dcterms:subject>
+      <dcterms:subject xml:lang="fr">toxicité</dcterms:subject>
+      <dcterms:subject xml:lang="en">toxicity</dcterms:subject>
+      <dcterms:subject xml:lang="fr">résistance aux maladies</dcterms:subject>
+      <dcterms:subject xml:lang="en">resistance to diseases</dcterms:subject>
+      <dcterms:subject xml:lang="fr">détoxification</dcterms:subject>
+      <dcterms:subject xml:lang="en">toxin inactivation</dcterms:subject>
+      <dcterms:subject xml:lang="fr">santé humaine</dcterms:subject>
+      <dcterms:subject xml:lang="en">human health</dcterms:subject>
+      <dcterms:subject xml:lang="fr">génie génétique</dcterms:subject>
+      <dcterms:subject xml:lang="fr">plante transgénique</dcterms:subject>
+      <dcterms:subject xml:lang="en">transgenic plant</dcterms:subject>
+      <dcterms:subject xml:lang="fr">enzyme</dcterms:subject>
+      <dcterms:subject xml:lang="fr">Génétique des plantes</dcterms:subject>
+      <dcterms:subject xml:lang="en">Plants genetics</dcterms:subject>
+<!--
+      <dcterms:abstract lang="en">The development of alternative selection systems without antibiotic resistance genes is a key issue to produce safer and more acceptable transgenic plants. Eutypine is a toxin produced by Eutypa lata, the causal agent of eutypa dieback of grapevine, which is detoxified in mung bean (Vigna radiata) by the gene Vr-ERE. Many phytotoxic compounds containing an aldehyde group can act as substrates for the Vr-ERE enzyme. The aim of the present work was to evaluate the effects of the overexpression of Vr-ERE in transgenic apple plants, as a first step towards the development of an alternative selection system. Viable transgenic apple clones expressing Vr-ERE were produced from the cultivar Greensleeves under kanamycin selection. Although the Vr-ERE  transgene was normally expressed at the RNA and protein levels, the increase in aldehyde reductase activity tested on a range of potential substrates was very low in these clones. None of them revealed a significant increase in tolerance to toxic aldehydes compared to their non-transgenic control. This work with transgenic apple plants overexpressing the detoxifying gene Vr-ERE illustrates some of the difficulties in developing an alternative selection pressure</dcterms:abstract>
+      Validator complaints that: Attribute 'lang' is not allowed to appear in element 'dcterms:abstract'.
+      FIXME: Maybe this should be allowed!!!
+-->
+      <dcterms:abstract>The development of alternative selection systems without antibiotic resistance genes is a key issue to produce safer and more acceptable transgenic plants. Eutypine is a toxin produced by Eutypa lata, the causal agent of eutypa dieback of grapevine, which is detoxified in mung bean (Vigna radiata) by the gene Vr-ERE. Many phytotoxic compounds containing an aldehyde group can act as substrates for the Vr-ERE enzyme. The aim of the present work was to evaluate the effects of the overexpression of Vr-ERE in transgenic apple plants, as a first step towards the development of an alternative selection system. Viable transgenic apple clones expressing Vr-ERE were produced from the cultivar Greensleeves under kanamycin selection. Although the Vr-ERE  transgene was normally expressed at the RNA and protein levels, the increase in aldehyde reductase activity tested on a range of potential substrates was very low in these clones. None of them revealed a significant increase in tolerance to toxic aldehydes compared to their non-transgenic control. This work with transgenic apple plants overexpressing the detoxifying gene Vr-ERE illustrates some of the difficulties in developing an alternative selection pressure</dcterms:abstract>
+<!--
+      <dcterms:type xsi:type="voa3r:ContentType">Article</dcterms:type>
+-->
+<!--
+FIXME: As it stands now with the XSD, the type must appear before the license...
+-->
+      <dcterms:type>Article</dcterms:type>
+      <voa3r:license xsi:type="dcterms:URI">http://creativecommons.org/licenses/by-nc-nd/3.0/</voa3r:license>
+<!--
+      <voa3r:reviewStatus xsi:type="voa3r:peerReviewStatus" />
+      <voa3r:reviewStatus xsi:type="voa3r:PeerReviewStatus" />
+      FIXME: Neither of the above validates... The 2nd should!
+-->
+      <voa3r:reviewStatus />
+<!--
+      <voa3r:publicationStatus xsi:type="voa3r:publicationStatus">Final</voa3r:publicationStatus>
+-->
+      <voa3r:publicationStatus xsi:type="voa3r:PublicationStatus">Final</voa3r:publicationStatus>
+      <dcterms:conformsTo />
+<!--
+    </dcterms:VOA3R>
+-->
+<!--
+  </metadata>
+-->
+<!--
+</record>
+-->
+</resource>
+

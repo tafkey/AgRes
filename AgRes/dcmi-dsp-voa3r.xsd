@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema targetNamespace="http://dublincore.org/xml/dc-dsp/2008/01/14" xmlns="http://dublincore.org/xml/dc-dsp/2008/01/14" 
 xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
     <xsd:element name="DescriptionSetTemplate">

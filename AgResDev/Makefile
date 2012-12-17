@@ -57,7 +57,6 @@ install:
 	cp -i NEW-level4-schematron-rules.xml ../AgRes/VOA3R-level4-schematron-rules.xml
 	@ls -al NEW-level4-dsp.xml NEW-level4-example.xml NEW-level4-schematron-rules.xml
 	@ls -al ../AgRes/VOA3R-level4-*
-
 	@echo "All done!"
 	
 
