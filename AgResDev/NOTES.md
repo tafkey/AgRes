@@ -1,4 +1,8 @@
-	<http://dublincore.org/documents/dc-ds-xml/>
+CHECK THESE OUT: 
+* https://github.com/flazz/schematron.git
+* http://www.dpawson.co.uk/schematron/
+
+<http://dublincore.org/documents/dc-ds-xml/>
 
 <http://dublincore.org/documents/2008/03/31/dc-dsp/>
 <http://dublincore.org/documents/2008/11/03/profile-guidelines/>

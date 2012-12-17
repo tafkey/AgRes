@@ -9,9 +9,10 @@ DSP=NEW-level4-dsp.xml
 EXAMPLE=NEW-level4-example.xml
 RULES=NEW-level4-schematron-rules.xml
 ISORULES=NEW-level4-schematron-iso-rules.xml
-DSP2SCHEMATRON=dsp2sch-dcds.xsl
+DSP2SCHEMATRON=NEW-dsp2sch-dcds.xsl
 ISO=iso-schematron.xsl
-DSPXSD=../AgRes/dcmi-dsp-DC.xsd
+#ISO=skeleton1-5.xsl
+DSPXSD=dcmi-dsp-voa3r.xsd
 
 TEMPREPORT=test-report.tmp
 TESTREPORT=test-report.xml

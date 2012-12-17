@@ -200,15 +200,61 @@
 
 				</xsl:for-each>
 
+				<!-- Count statements matching each ST in this DT -->
+					
+				<xsl:for-each select="dsp:StatementTemplate[dsp:SubPropertyOf]">
+
+					<!-- Build expression based on DSP 6.4.1 Property list constraint -->
+
+					<!-- A.K. ++++ Trying some minimal support for 6.4.2 Subproperty constraint -->
+
+					<xsl:variable name="statementPath">
+						<xsl:call-template name="makeStatementPath">
+							<xsl:with-param name="st" select="." />
+						</xsl:call-template>
+					</xsl:variable>
+
+					<xsl:variable name="st-no" select="position()" />
+					<xsl:variable name="st-id">dt-<xsl:value-of select="$dt-no"/>-st-<xsl:value-of select="$st-no"/>-<xsl:value-of select="@ID" />-</xsl:variable> 
+				
+					<xsl:element name="iso:report">
+						<xsl:attribute name="test">count(<xsl:value-of select="$statementPath" />)</xsl:attribute>
+						<xsl:text>Report:</xsl:text>
+						<xsl:call-template name="makeDescPosition" />
+						<xsl:text> Description Element contains </xsl:text>
+						<xsl:element name="iso:value-of">
+							<xsl:attribute name="select">count(<xsl:value-of select="$statementPath" />)</xsl:attribute>
+						</xsl:element>
+						<xsl:text> Statement Elements matching statement template </xsl:text>
+						<xsl:value-of select="$st-id" />
+					</xsl:element>
+
+					<!-- DSP 6.1 : Minimum number of statements matching ST (if 0 (default), don't bother) -->
+
+					<xsl:apply-templates select="@minOccurs[not(.='0')]" >
+						<xsl:with-param name="statementPath" select="$statementPath" />
+						<xsl:with-param name="st-id" select="$st-id" />
+					</xsl:apply-templates>
+
+					<!-- DSP 6.2 : Maximum number of statements matching ST (if infinity (default), don't bother)  -->
+	
+					<xsl:apply-templates select="@maxOccurs[not(.='infinity')]" >
+						<xsl:with-param name="statementPath" select="$statementPath" />
+						<xsl:with-param name="st-id" select="$st-id" />
+					</xsl:apply-templates>
+
+				</xsl:for-each>
+				
 				<!-- Check for statements with no matching ST in this DT -->
 
 				<xsl:variable name="otherStatementPaths">
 					<xsl:text>dcds:statement[not(</xsl:text>
 
-					<xsl:for-each select="dsp:StatementTemplate[dsp:Property]">
+					<!-- ++++ -->
+					<xsl:for-each select="dsp:StatementTemplate[dsp:SubPropertyOf]">
 
 						<xsl:text>(</xsl:text>
-						<xsl:for-each select="dsp:Property">
+						<xsl:for-each select="dsp:SubPropertyOf">
 							<xsl:text>@dcds:propertyURI='</xsl:text>
 							<xsl:value-of select="." />
 							<xsl:text>'</xsl:text>
@@ -223,6 +269,8 @@
 						</xsl:if>
 	
 					</xsl:for-each>
+
+
 
 					<xsl:text>)]</xsl:text>
 
@@ -410,6 +458,80 @@
 		</xsl:choose>
 
 	</xsl:template>
+
+	<xsl:template match="dsp:StatementTemplate[dsp:SubPropertyOf]">
+		<xsl:param name="descriptionPath" />
+		<xsl:param name="dt-no" />
+
+		<!-- Build expression based on DSP 6.4.1 Property list constraint -->
+
+		<!-- N.B. No support for 6.4.2 Subproperty constraint -->
+		<!-- A.K. +++ Trying to achieve some minimal support 6.4.2 Subproperty constraint -->
+
+		<xsl:variable name="statementPath">
+			<xsl:call-template name="makeStatementPath">
+				<xsl:with-param name="st" select="." />
+			</xsl:call-template>
+		</xsl:variable>
+
+		<xsl:variable name="st-no" select="position()" />
+		<xsl:variable name="st-id">dt-<xsl:value-of select="$dt-no"/>-stp-<xsl:value-of select="$st-no"/>-<xsl:value-of select="@ID" />-</xsl:variable> 
+	
+		<xsl:choose>
+			<xsl:when test="@type='literal'">
+				
+				<!-- DSP 6.5 : type = literal  -->
+
+				<xsl:element name="iso:pattern">
+					<xsl:attribute name="id"><xsl:value-of select="$st-id"/>lit</xsl:attribute>
+
+					<xsl:element name="iso:rule">
+						<xsl:attribute name="context"><xsl:value-of select="$descriptionPath"/>/<xsl:value-of select="$statementPath"/></xsl:attribute>
+
+						<xsl:element name="iso:assert">
+							<xsl:attribute name="test">dcds:literalValueString</xsl:attribute>
+							<xsl:text>Error:</xsl:text>
+							<xsl:call-template name="makeDescStmtPosition" />
+							<xsl:text> Literal Value String element required by statement template </xsl:text>
+							<xsl:value-of select="$st-id" />
+						</xsl:element>
+						
+						<xsl:apply-templates select="dsp:LiteralConstraint">
+							<xsl:with-param name="st-id" select="$st-id" />
+						</xsl:apply-templates>
+						
+					</xsl:element>
+					
+				</xsl:element>
+		
+			</xsl:when>
+				
+			<xsl:when test="@type='nonliteral'">
+			
+				<!-- DSP 6.6 : type = nonliteral -->
+						
+				<xsl:element name="iso:pattern">
+					<xsl:attribute name="id"><xsl:value-of select="$st-id"/>nonlit</xsl:attribute>
+
+					<xsl:element name="iso:rule">
+						<xsl:attribute name="context"><xsl:value-of select="$descriptionPath"/>/<xsl:value-of select="$statementPath"/></xsl:attribute>
+
+						<xsl:apply-templates select="dsp:NonLiteralConstraint">
+							<xsl:with-param name="st-id" select="$st-id" />
+						</xsl:apply-templates>
+						
+					</xsl:element>
+					
+				</xsl:element>
+		
+			</xsl:when>
+				
+			<xsl:otherwise />
+	
+		</xsl:choose>
+
+	</xsl:template>
+
 
 	<xsl:template match="dsp:StatementTemplate/@minOccurs">
 		<xsl:param name="statementPath" />
@@ -859,7 +981,7 @@
 
 		<xsl:call-template name="processLiteralConstraint">
 			<xsl:with-param name="literalConstraint" select="." />
-			<!-- is this capital "V" the error ??????? -->
+			<!-- +++ is this capital "V" the error ??????? -->
 <!--
 			<xsl:with-param name="element" select="'dcds:ValueString'" />
 -->
@@ -933,7 +1055,8 @@
 		<xsl:param name="st" />
 
 		<xsl:text>dcds:statement[</xsl:text>
-		<xsl:for-each select="$st/dsp:Property">
+	<!-- +++ -->
+		<xsl:for-each select="$st/dsp:Property | $st/dsp:SubPropertyOf">
 			<xsl:text>@dcds:propertyURI='</xsl:text>
 			<xsl:value-of select="." />
 			<xsl:text>'</xsl:text>
@@ -944,6 +1067,9 @@
 		<xsl:text>]</xsl:text>
 		
 	</xsl:template>
+
+
+
 
 	<xsl:template name="makeValueDescriptionPath">
 		<xsl:param name="nonLitConst" />

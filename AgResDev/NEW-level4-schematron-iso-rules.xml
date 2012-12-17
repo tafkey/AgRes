@@ -582,8 +582,8 @@
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> DescriptionTemplateRef not specified, so the valueURI attribute value must not match a resourceURI attribute value.dt-1-stp-8-language-</statement>
       </report>
     </axsl:if>
-    <axsl:if test="not((@dcds:vesURI = 'http://purl.org/dc/terms/RFC5646'))">
-      <failed-assertion test="(@dcds:vesURI = 'http://purl.org/dc/terms/RFC5646')">
+    <axsl:if test="not((@dcds:vesURI = 'http://voa3r.eu/terms/RFC5646'))">
+      <failed-assertion test="(@dcds:vesURI = 'http://voa3r.eu/terms/RFC5646')">
         <axsl:call-template name="location"/>
         <statement>Error: Description Element: <axsl:value-of select="1 + count(../preceding-sibling::dcds:description)"/> Statement Element: <axsl:value-of select="1 + count(preceding-sibling::dcds:statement)"/> VES URI must be from list specified by statement template dt-1-stp-8-language-</statement>
       </failed-assertion>
